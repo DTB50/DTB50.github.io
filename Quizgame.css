@@ -1,0 +1,142 @@
+body {
+  background-color: #2e8929;
+  font-family: arial;
+    text-align: center;
+}
+
+
+#question {
+  background-color: white;
+  margin-bottom: 0.5em;
+  display: block;
+  box-shadow: 3px 4px #2a4c28;
+  border-radius: 3px;
+  padding: 20px 20px 20px 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttons {
+  width: 500px;
+  height: 115px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#statusbar {
+  width: 500px;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#score {
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#timer {
+  float: left;
+  margin-left: 80px;
+  margin-right: auto;
+}
+
+#losses {
+    float: right;
+}
+
+#cash {
+    float: left;
+    margin-left: 80px;
+    margin-right: auto;
+}
+
+#playeroptions {
+  width: 280px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#playerabilities {
+  width: 140px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#fifty {
+  width: 120px;
+  height: 40px;
+  padding: 12px 20px 20px 20px;
+  float: left;
+}
+
+#fifty:hover {
+    background-color: palegoldenrod;
+    font-weight: bold;
+    border: 2px solid;
+    border-color: goldenrod;
+}
+
+
+button {
+  float: left;
+  background-color: white;
+  display: inline-block;
+  box-shadow: 3px 4px #2a4c28;
+  border-radius: 3px;
+  padding: 20px 20px 20px 20px;
+  width: 110px;
+  height: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#walk {
+  width: 120px;
+  height: 40px;
+  padding: 12px 20px 20px 20px;
+  float: right;
+}
+
+#continue {
+  width: 120px;
+  height: 40px;
+  padding: 12px 20px 20px 20px;
+  float: left;
+}
+
+#walk:hover {
+    background-color: palevioletred;
+    font-weight: bold;
+    border: 2px solid;
+    border-color: darkred;
+}
+
+button:hover {
+    background-color: palegreen;
+    font-weight: bold;
+    border: 2px solid green;
+}
+
+#leader {
+    height: 25px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#winner {
+ float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hiScore {
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
