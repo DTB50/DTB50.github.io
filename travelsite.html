@@ -1,0 +1,317 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italia Walking Tours</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/my.css">
+  </head>
+  <body>
+    <!-- comments help you to make titles for each main section such as header, navigation, section, footer etc -->
+
+
+  <!-- body content here -->
+<!-- NAVIGATION BAR - based on information from https://foundation.zurb.com/sites/docs/top-bar.html -->
+<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  <div class="title-bar-title">Italia Walking Tours</div>
+</div>
+      
+<div class="top-bar" id="responsive-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Italia Walking Tours</li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Book</a></li>
+      <li>
+        <a href="#">Other cities</a>
+        <ul class="menu">
+            <li><a href="http://www.google.com">Turin</a></li>
+            <li><a href="http://www.google.com">Milan</a></li>
+            <li><a href="http://www.google.com">Rome</a></li>
+        </ul>
+     </li>
+        </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- IMAGE CAROUSEL  -->
+<!-- Based on information found here: https://foundation.zurb.com/sites/docs/orbit.html -->
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+      <div class="orbit-wrapper">
+        <div class="orbit-controls">
+          <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+          <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+        </div>
+        <ul class="orbit-container">
+          <li class="is-active orbit-slide">
+            <figure class="orbit-figure">
+              <img class="orbit-image" src="images/4701563036_fa4e2089d2_b.jpg" alt="Canals">
+              <figcaption class="orbit-caption">The canals of Venice</figcaption>
+            </figure>
+          </li>
+          <li class="orbit-slide">
+            <figure class="orbit-figure">
+              <img class="orbit-image" src="images/339100247_73fee9377b_b.jpg" alt="Coffee">
+              <figcaption class="orbit-caption">A cappuccino</figcaption>
+            </figure>
+          </li>
+          <li class="orbit-slide">
+            <figure class="orbit-figure">
+              <img class="orbit-image" src="images/4701308889_6938be84e2_b.jpg" alt="Masks">
+              <figcaption class="orbit-caption">Enchanting carnival masks</figcaption>
+            </figure>
+          </li>
+          <li class="orbit-slide">
+            <figure class="orbit-figure">
+              <img class="orbit-image" src="images/image2.jpg" alt="Sundown canals">
+              <figcaption class="orbit-caption">The canals at sundown</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+  <nav class="orbit-bullets">
+    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+  </nav>
+</div>
+      
+<!-- 3 COLUMN GRID FOR IMAGES -->
+<!-- Based on code found here: https://foundation.zurb.com/sites/docs/flexbox-utilities.html, and on community answer (user Wing-Hou Chan) found here: https://foundation.zurb.com/forum/posts/6578-stack-the-columns-vertically-on-mobile-and-each-element-in-column-horizontally-->
+<div class="grid-x grid-margin-x grid-padding-x">
+  <div class="small-12 medium-4 large-4 container">
+      <a href="http://www.google.com">
+      <img src="images/small 4.jpg" style="border-radius: 1em; width: 90%; margin-left: 2em">
+        <div class="overlay">
+            <div class="text">Top Attractions</div>
+        </div>
+        <div class="invisibleoverlay">
+            <div class="visibletext">Top Attractions</div>
+        </div>
+    </a>
+    </div>
+  <div class="small-12 medium-4 large-4 container">
+      <img src="images/small 2.jpg" style="border-radius: 1em; width: 90%; margin-left: 2em">
+        <a href="http://www.google.com">
+        <div class="overlay">
+          <div class="text">Top Tours</div>
+        </div>
+        <div class="invisibleoverlay">
+            <div class="visibletext">Top Tours</div>
+        </div>
+      </a>
+  </div>
+  <div class="small-12 medium-4 large-4  container">
+      <img src="images/small 3.jpg"  style="border-radius: 1em; width: 90%; margin-left: 2em">
+      <a href="http://www.google.com">
+      <div class="overlay">
+          <div class="text">Book online and save 80%</div>
+      </div>
+        <div class="invisibleoverlay">
+            <div class="visibletext">Book online and save 80%</div>
+        </div>
+      </a>
+    </div>
+</div>  
+
+
+<!-- SINGLE COLUMN TEXT AREA FOR BLURB -->
+<div class="callout">
+<h1>Venice Tours</h1>
+<p>Tours, Sightseeing and Things to do.</p>
+    <p>First time in Venice? You'll see all the highlights of this magical city in our combined walking and boat tour.</p>
+    <p>Plus, you'll skip the long lines at St. Mark's Basilica - don't waste time queuing when you're on vacation!</p>
+    <p>Trusted English Speaking Guides.</p>
+</div>
+
+
+<!-- SIDE NAVIGATION BAR -->
+
+<div id="mainarea" class="grid-x grid-margin-x grid-padding-x maintext">
+    <!--Sticky Magellan nav bar based on information found here: https://foundation.zurb.com/sites/docs/sticky.html-->
+    <!-- and here: https://foundation.zurb.com/sites/docs/magellan.html -->
+    <!-- and the video content here: https://www.youtube.com/watch?v=dzsudEUbRCA&index=4&list=PLGfh-NC9-wCcOaHv_OmxMmJVUscFT-PmE -->
+    <div class="hide-for-small-only medium-2 large-2 columns" data-sticky-container>
+      <nav class="columns sticky" data-sticky data-anchor="mainarea" data-sticky-on="medium large">
+        <ul class="vertical menu" data-magellan>
+          <li><a href="#tours">Tours</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#moreinfo">More Information</a></li>
+          <li><a href="#compinfo">Company Information</a></li>
+        </ul>
+      </nav>
+    </div>
+      
+<!-- MAIN TEXT SECTIONS -->
+
+    <div class="sections small-12 medium-8 large-8 columns rightcol">
+      <div id="content">
+        <div id="tours" data-magellan-target="tours">
+            <h2>Tours</h2>
+            <p>
+                Venice Tours include small group  Walking Tours,  Day Tours &  Boat Tours by the Original Italia Walking Tour Company.
+            </p>
+            <p>
+                Our selection of Venice Tours also includes Private Walking Tours and Private Boat Tours. 
+            </p>
+            <h4>Walking Tour</h4>
+            <p>
+                All our Venice Tours are led by expert tour guides and include skip the queue tickets for the must-see sights of Venice
+            </p>
+            <p>
+                Our Venice Tours also include Day Tours from Venice to the mainland on our popular small group Hill Towns of Veneto Day Trip, our small group Dolomites Day Trip, as well as Private Venice Day Tours to celebrated wine regions and the world-famous Palladian Villas.
+            </p>
+            <h4>Boat Tour</h4>
+            <p>
+                Boat trips include Murano. It is believed that glassmaking in Murano originated in 9th century Rome, with significant Asian influences, as Venice was a major trading port. Muranos reputation as a center for glassmaking was born when the Venetian Republic, fearing fire and destruction of the city's mostly wooden buildings, ordered glassmakers to move their foundries to Murano in 1291. Murano glass is still interwoven with Venetian glass.
+            </p>
+            <p>
+                There is also a trip to Burano. The ancient art of lace-making has been passed down from generation to generation through the skilled hands of the Burano lace-makers, right up to the present day. Our Program of Venice Tours offers the widest selection & best value in Venice Tours on-line.
+            </p>
+            <h3>The Grand Canal</h3>
+            <p>
+                Our Grand Canal Boat Tour is quite simply a breathtaking experience of Venice. In the first part of the 
+                tour  cruise down the Grand Canal at a relaxed pace with  photo opportunities, as your guide introduces you to the splendid Palaces, Churches, Bridges and other Monumental 
+                buildings that line the main waterway. Learn the history and evolution of the main 
+                street of Venice, and be entertained by anecdotes about the famous and infamous people that once lived along this celebrated waterway. 
+            </p> 
+            <h4>St Mark's Basilica</h4>
+            <p>
+                St Mark's Basilica (Basilica di San Marco) is the most famous of the many churches of Venice and an example of Byzantine architecture in the world. Located just off the Grand Canal, the gleaming basilica overlooks the Piazza San Marco (St. Mark's Square) and adjoins the Doge's Palace. Skip the queue and visit this masterpiece. San Marco is a cathedral,it was the Doge's chapel until it became the seat of the Archbishop of Venice in 1807.
+            </p> 
+            <hr>
+            <br/>
+            </div>
+ 
+            <div id="reviews" data-magellan-target="reviews"> 
+<!-- Accordion boxes based on guide found here: https://foundation.zurb.com/sites/docs/accordion.html#-->
+            <h2>Reviews</h2>
+            <ul class="accordion" data-accordion data-allow-all-closed="true">
+                <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">Reviewed by Macey M, March 2016</a>
+                    <div class="accordion-content" data-tab-content>
+                        <p>
+                            My husband and I were very impressed with this tour and the one we took in Madrid. The guides were very knowledgeable and friendly. Both tours were well organized and the fee was very reasonable. I will definitely use them again and tell all my friends to use them for their tours.
+                        </p>
+                    </div>
+                </li>
+                <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">Reviewed by Ronald Y, September 2017</a>
+                    <div class="accordion-content" data-tab-content>
+                        <p>
+                            The tour was really well arranged and showed us both history and sights that we would never have found. The trip down the grand canal was fantastic with the sun setting towards the end of the journey.  Definitely money well spent.We could do it all again tomorrow.
+                        </p>
+                    </div>
+                </li>
+                <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">Reviewed by Sarah S, USA, November 2015</a>
+                    <div class="accordion-content" data-tab-content>
+                        <p>
+                            Great local (english-speaking) tour guides who really know the city's history and architecture.  Very informative and enjoyable. St. Marks Basilica tour was very short, as only the central cathedral was visited. If you expect a more detailed tour of St. Mark's, I suggest you find a different tour. However, as a overall tour of Venice, especially for 1st time visitors, Venice in One Day tour, both walking and grand canal boat tour, is a great value and truly helps you understand the history and special culture of Venice.
+                        </p>
+                    </div>
+                </li>
+                <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">Reviewed by Lorna, J October 2017</a>
+                    <div class="accordion-content" data-tab-content>
+                        <p>
+                            We decided on this company after on a friend’s recommendation. We loved every minute if our Venice holiday and the walking tour guide was excellent. We would suggest taking water even in October and remember to take sensible walking shoes. The trip on the canal was breathtaking. Lots of photo opportunities. The breaks allowed us to peruse the shops and sample the amazing food on offer.
+                        </p>
+                    </div>
+                </li>
+                <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">Reviewed by Lorna, J October 2017</a>
+                    <div class="accordion-content" data-tab-content>
+                        <p>
+                            We decided on this company after on a friend’s recommendation. We loved every minute if our Venice holiday and the walking tour guide was excellent. We would suggest taking water even in October and remember to take sensible walking shoes. The trip on the canal was breathtaking. Lots of photo opportunities. The breaks allowed us to peruse the shops and sample the amazing food on offer.
+                        </p>
+                    </div>
+                </li>
+                <li class="accordion-item" data-accordion-item>
+                    <a href="#" class="accordion-title">Reviewed by Jemima,P, September 2017</a>
+                    <div class="accordion-content" data-tab-content>
+                        <p>
+                            My parents and I enjoyed all our tours. The walking tour was very informative and we would never have had enough time to venture back into some of the small canals without a guide. This tour gave us the opportunity to see so much more than we would have on our own! During our breaks we had plenty of time for lunch & some shopping. The boat tour was on a beautiful wood water taxi and our guide was very friendly and informative as well. I will recommend this tour to all my friends and family!
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            </div>
+            <hr>
+            <br/>
+        <div id="moreinfo" data-magellan-target="moreinfo">
+            <h2>Additional Info</h2>
+                <p>
+                    Confirmation will be received at time of booking, unless booked within 12hrs on the day of travel. In this case confirmation will be received within 24 hours.
+                </p>
+                <p>
+                    Tours are not suitable for people in wheelchairs or with walking difficulties as passengers undertaking boat trips are required to step down onto the boat when boarding. 
+                </p>
+                <p>
+                    Occasionally the Basilica will be closed to the public (without notice) because of festivities or high water.
+                </p>
+                <p>
+                    It is possible that the walking tour and boat tour will take place separately (over a couple of days).
+                </p>
+                <p>
+                    A dress code is required to enter places of worship and selected museums. No shorts, or sleeveless tops or dresses are allowed, shoulders must be covered for both men and women. You may risk being refused entry if you fail dress appropriately.
+                </p>
+            </div>
+            <hr>
+            <br/>
+        <div id="compinfo" data-magellan-target="compinfo">
+            <h2>Company Information</h2>
+                <p>
+                    If you need to contact the company for any reason, please use the following information: 
+                </p>
+            
+                <p>
+                    Address:
+                </p>
+                <p>
+                    Italia Walking Tours, <br/>
+                    Giudecca 19, <br/>
+                    308886 Venice, <br/>
+                    Italy<br/>
+                </p>
+                <p>
+                    Tel: +39 041 557 774445566
+                </p>
+                <p>
+                    Fax: +39 041 557 393045766
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                                        <br/>
+                    <br/>
+                    <br/>
+                </p>
+            </div>
+      </section>
+    </div>
+    
+
+<!--Comments section using accordion tutorial found here: https://foundation.zurb.com/sites/docs/accordion.html -->
+</div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/my.js"></script>
+  </body>
+</html>
