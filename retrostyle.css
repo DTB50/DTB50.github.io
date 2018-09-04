@@ -1,0 +1,77 @@
+ body {
+                font-family: 'Press Start 2P', cursive;
+                color: limegreen;
+                background: black;
+            }
+
+#svg1{
+    width: 900px;
+    height: 600px;
+}
+
+.yAxis text {
+    fill: limegreen;
+}
+
+.yAxis line{
+    stroke: limegreen;
+}
+
+.yAxis path{
+    stroke: limegreen;
+}
+
+text {
+    font-family: 'Press Start 2P', cursive;
+    color: limegreen;
+    font-size: 10px;
+}
+
+.label {
+    fill: limegreen;
+}
+
+.tooltiptext {
+    fill: limegreen;
+}
+
+
+.button {
+    float: left;
+    font-family: 'Press Start 2P', cursive;
+    color: limegreen;
+    margin-right: 10px;
+    font-size: 10pt;
+}
+
+.button:hover{
+    color: blue;
+}
+
+.activeButton {
+    float: left;
+    background-color: yellow;
+    color: blue;
+    margin-right: 10px;
+    font-size: 10pt;
+}
+
+.filterbutton {
+    float: left;
+    font-family: 'Press Start 2P', cursive;
+    color: pink;
+    margin-right: 10px;
+}
+
+.filterbutton:hover{
+    color: blue;
+}
+
+p {
+  font-size: 10pt;
+}
+
+
+.filtertext {
+  color: yellow;
+}
