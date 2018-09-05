@@ -1,51 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>David Burns' Portfolio Site</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  
-    <style type="text/css">
-  
-    .fakeimg {
-          height: 200px;
-        background-color: #aaa;
-      }  
+    <head>
+      <title>David Burns' Portfolio Site</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-        .imgfit{
-            height: 200px;
+    <style type="text/css">
+
+        .fakeimg {
+              height: 200px;
+            background-color: #aaa;
+          }  
+
+            .imgfit{
+                max-height: 200px;
+            }
+
+        .navbar .navbar-nav li a:hover{color: #48ed42 !important;} 
+
+         .card .card-header a{color: black !important;} 
+         .card .card-header a:hover{font-weight: bold !important;} 
+         .card .card-header{background-color: #56e251 !important;} 
+         .card .card-body{border: 1px solid light-grey !important; border-radius: 3px !important}       
+
+         h2 { padding-top: 60px;}
+
+        .projectLink {
+            color: black !important;
+            text-decoration: underline; 
+        }
+
+        .projectLink:hover{
+            color: #48ed42 !important;
+            margin: auto;
         }
         
-    .navbar .navbar-nav li a:hover{color: #48ed42 !important;} 
-
-     .card .card-header a{color: black !important;} 
-     .card .card-header a:hover{font-weight: bold !important;} 
-     .card .card-header{background-color: #56e251 !important;} 
-     .card .card-body{border: 1px solid light-grey !important; border-radius: 3px !important}       
-
-     h2 { padding-top: 60px;}
+        .projectBox {
+            background-color: #efefef;
+            border-radius: 15px;
+            border: 10px solid white;
+            padding: 5px;
+        }
         
-    .projectLink {
-        color: black !important;
-        text-decoration: underline; 
-    }
-
-    .projectLink:hover{
-        color: #48ed42 !important;
-    }
-      
-</style>
-</head>
+        .projectImg:hover{
+            border: 4px solid #48ed42;
+            margin: auto;
+        }
+        
+    </style>
+    </head>
 <body>
 
 <div id="top"></div>
     
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" style="margin-bottom: 0px">
   <h1>David Burns</h1>
     <h3>Aspiring web developer</h3>
     <h1><i class="fab fa-html5"></i> <i class="fab fa-js"></i> <i class="fab fa-css3-alt"></i><i class="fab fa-node"></i></h1>
@@ -76,7 +89,7 @@
     
 <!-- ABOUT ME -->
 
-<div class="container" style="margin-top:30px">
+<div class="container">
   <div class="row" id="aboutMe">
     <div class="col-12">
       <h2>About Me</h2>
@@ -204,7 +217,9 @@
               <li>      
               <b>Promontory Financial Group - Analyst (Contract) (June 2010 - February 2011)</b>
                     <p>Supported consulting teams and senior staff of a financial services regulatory consultancy by:</p>
-                    Contributing to reports and materials for public and private sector clients including Board effectiveness reviews and financial promotions workshops.
+                  <ul>  
+                  <li>Contributing to reports and materials for public and private sector clients including Board effectiveness reviews and financial promotions workshops.</li>
+                  </ul>
              </li>
             
             </ul>
@@ -241,44 +256,46 @@
     
 <div class="row" id="projects">
     <div class="col">
-        <h3>Projects</h3>    
+        <h2>Projects</h2>    
         <p>The links below lead to a selection of projects developed as part of the MSc in Computing and IT.</p>
     </div>
 </div>
-<div class="row" style="border: 1px solid lightgrey">    
-    <div class="col-sm-4">
+<div class="row">    
+    <div class="col-sm-4 projectBox">
       <a href="musicDB/CS5002A3albums.html" class="projectLink"><h3>Album Data Table</h3></a>
-      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/albums.png">
+        <a href="musicDB/CS5002A3albums.html"><img class="img-responsive img-thumbnail imgfit projectImg" src="siteimgs/albums.png"></a>
       <p>A table of data about best-selling albums that can be filtered by single or multiple criteria.</p>
     </div>
 
-      <div class="col-sm-4">
-          <a href="client-running-checkers-app/checkers.html" class="projectLink"><h3>Checkers game</h3></a>
-          <img class="img-responsive img-thumbnail imgfit" src="siteimgs/checkers.png">
-          <p>A simple local two-player Checkers game made using jQuery.</p>
+
+    <div class="col-sm-4 projectBox">
+        <a href="quiz/Quizgame.html" class="projectLink"><h3>Pub Quiz game</h3></a>
+        <a href="quiz/Quizgame.html"><img class="img-responsive img-thumbnail imgfit projectImg" src="siteimgs/quiz.png"></a>
+      <p>A quiz game made using jQuery and the Quizdb API.</p>
     </div>
 
-    <div class="col-sm-4">
+
+    <div class="col-sm-4 projectBox">
         <a href="travelsite/travelsite.html" class="projectLink"><h3>Italia tours test webpage</h3></a>
-      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/website.png">
+        <a href="travelsite/travelsite.html"><img class="img-responsive img-thumbnail imgfit projectImg" src="siteimgs/website.png"></a>
       <p>A sample website for a fictitious travel agency made using the Foundation framework. Demonstrates features such as the carousel, accordion, and sticky "Magellan" navigation element.</p>
     </div>
 
   </div>
-<div class="row" style="border: 1px solid lightgrey">    
-    <div class="col-sm-4">
+<div class="row">    
+    <div class="col-sm-4 projectBox">
         <a href="vgsales/overviewbar.html" class="projectLink"><h3>Videogame sales charts</h3></a>
-      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/gamesales2.png">
+        <a href="vgsales/overviewbar.html"><img class="img-responsive img-thumbnail imgfit projectImg" src="siteimgs/gamesales2.png"></a>
       <p>Bar chart visualisation of the 100 top-selling videogames made using d3.js that can be viewed at higher and lower levels and filtered by different criteria, as well as displaying further data via tooltips. (Note: Must be viewed in Mozilla Firefox)</p>
     </div>
       
-    <div class="col-sm-4">
-        <a href="quiz/Quizgame.html" class="projectLink"><h3>Pub Quiz game</h3></a>
-      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/quiz.png">
-      <p>A quiz game made using jQuery and the Quizdb API.</p>
+  <div class="col-sm-4 projectBox">
+      <a href="client-running-checkers-app/checkers.html" class="projectLink"><h3>Checkers game</h3></a>
+      <a href="client-running-checkers-app/checkers.html"><img class="img-responsive img-thumbnail imgfit projectImg" src="siteimgs/checkers.png"></a>
+      <p>A simple local two-player Checkers game made using jQuery.</p>
     </div>
-
-    <div class="col-sm-4">
+    
+    <div class="col-sm-4 projectBox">
       <h3>More to come...</h3>
       <div class="img-responsive img-thumbnail fakeimg imgfit"><i class="fas fa-ellipsis-h"></i></div>
       <p>This page will be updated with further projects in time.</p>
@@ -290,6 +307,6 @@
 </br>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Bootstrap site developed using resources adapted from tutorials at <a href="http://www.w3schools.com">w3schools.com</a></p>
+  <p>Bootstrap site developed using resources adapted from <a href="http://www.w3schools.com">w3schools.com</a></p>
   <p>Icons are sourced under a free license from <a href="htp://www.fontawesome.com">Font Awesome</a></p>
 </div>
