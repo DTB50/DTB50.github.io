@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+        <meta charset="UTF-8">
+		<script type="text/javascript" src="d3.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+				<script type="text/javascript" src="systembarunits.js"></script>
+        <link rel="stylesheet" type="text/css" href="retrostyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+		<title> Analysis of best-selling videogames (as at end October 2016) </title>
+        <style>
+
+
+        </style>
+
+	</head>
+
+	<body>
+		<h3>Analysis of best-selling videogames as at end Oct 2016</h3>
+		<p>Overviews of top 100 by:</p>
+				<a href="overviewbar.html" class=button id="Allgames" >All games</a>
+				<a href="gamePage.html" class="button" id="Publisher">Publisher</a>
+				<a href="genrebar.html" class="button" id="Genre" >Genre</a>
+				<a href="systembar.html" class="button" id="System" >System</a>
+				<a href="yearbar.html" class="button" id="Year" >Year</a>
+				<br/>
+				<p class="filtertext">Top 100 by unit sales (with regional filters):</p>
+						<a href="overviewbarregion.html" class=button id="Allgames" >All games</a>
+						<a href="gamePageunits.html" class="button" id="Publisher">Publisher</a>
+						<a href="genrebarunits.html" class="button" id="Genre" >Genre</a>
+						<a href="systembarunits.html" class="activeButton" id="System" >System</a>
+						<a href="yearbarunits.html" class="button" id="Year" >Year</a>
+						<br/>
+	   <!--BAR CHART: GAMES BY SYSTEM -->
+           <p class="filtertext">Sales (in units) of top 100 games by system</p>
+					 <p id="countryfilter" class="filtertext">Filter sales by region: All</p>
+					 <div id="All" class="filterbutton" onClick="toggle(this.innerHTML)">All</div>
+					 <div id="Japan" class="filterbutton" onClick="toggle(this.innerHTML)">Japan</div>
+					  <div id="EU" class="filterbutton" onClick="toggle(this.innerHTML)">NA</div>
+						 <div id="Japan" class="filterbutton" onClick="toggle(this.innerHTML)">EU</div>
+						  <div id="Japan" class="filterbutton" onClick="toggle(this.innerHTML)">Other</div>
+							<br/>
+           <svg id="svg1">
+           </svg>
+
+	</body>
+
+</html>

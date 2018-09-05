@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Best-selling albums</title>
+  <script src="CS5002A3albumsjsondata.js"></script>
+    <script src="CS5002A3albumsTable.js"></script>
+    <!-- STYLE TAG ADDED -->
+    <style>
+        body {font-family: sans-serif}
+        td {text-align: center}
+        tr:nth-child(odd) {background-color: #e5e5e5}
+        th {background-color: #bde5fc}
+    </style>
+</head>
+
+<body>
+  <h1>Best Selling Albums</h1>
+  <h2 id="heading">A list of best-selling albums by year in the United States</h2>
+
+  <label for="selectYear">Please select a year: </label>
+  <select id="selectYear">
+    <!-- Years added via JS -->
+
+  </select>
+  <label for="selectCountry">Please select a country of origin: </label>
+  <select id="selectCountry">
+    <!-- Countries added via JS -->
+  </select>
+    <!-- ARTIST SELECT ADDED TO HMTL -->
+<label for="selectArtist">Please select an artist: </label>
+  <select id="selectArtist">
+    <!-- Artists added via JS -->
+  </select>
+    <!-- BUTTONS ADDED TO HTML-->
+    <button onClick="collectToFilter()">Select</button>
+    <button onClick="reset()">Reset</button>
+  <table id="hitsTable">
+    <tr>
+      <th>Year</th>
+      <th>Artist</th>
+      <th>Nationality</th>
+      <th>Album</th>
+    </tr>
+  </table>
+</body>
+</html>

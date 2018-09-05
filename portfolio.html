@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>David Burns' Portfolio Site</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+    <style type="text/css">
+  
+    .fakeimg {
+          height: 200px;
+        background-color: #aaa;
+      }  
+
+        .imgfit{
+            height: 200px;
+        }
+        
+    .navbar .navbar-nav li a:hover{color: #48ed42 !important;} 
+
+     .card .card-header a{color: black !important;} 
+     .card .card-header a:hover{font-weight: bold !important;} 
+     .card .card-header{background-color: #56e251 !important;} 
+     .card .card-body{border: 1px solid light-grey !important; border-radius: 3px !important}       
+
+     h2 { padding-top: 60px;}
+        
+    .projectLink {
+        color: black !important;
+        text-decoration: underline; 
+    }
+
+    .projectLink:hover{
+        color: #48ed42 !important;
+    }
+      
+</style>
+</head>
+<body>
+
+<div id="top"></div>
+    
+<div class="jumbotron text-center">
+  <h1>David Burns</h1>
+    <h3>Aspiring web developer</h3>
+    <h1><i class="fab fa-html5"></i> <i class="fab fa-js"></i> <i class="fab fa-css3-alt"></i><i class="fab fa-node"></i></h1>
+    <a href="mailto:david.burns.dtb@googlemail.com"><h4><i class="far fa-envelope"></i> david.burns.dtb@googlemail.com</h4></a>
+</div>
+
+<!-- NAVIGATION BAR -->
+    
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#top"><i class="fas fa-home"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#aboutMe">About Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#cv">Curriculum Vitae</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#projects">Projects</a>
+      </li>  
+    </ul>
+  </div>  
+</nav>
+    
+<!-- ABOUT ME -->
+
+<div class="container" style="margin-top:30px">
+  <div class="row" id="aboutMe">
+    <div class="col-12">
+      <h2>About Me</h2>
+        <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+          <img class="img-responsive img-thumbnail" src="siteimgs/mephoto.png">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+          <p>I am presently seeking employment as a web or software developer, having recently finished studying for an MSc in Computing and IT at the University of St Andrews. This degree has given me experience in a range of technologies including HTML5, CSS, Bootstrap, Foundation, Javascript and jQuery, Node.js, Express.js, CouchDB, mySQL, and Tableau.</p>
+            <p>I have a background predominantly focused on financial services regulation, having spent much of my career at the Bank of England Prudential Regulation Authority; however, after taking some online coding courses as a hobby, I decided to return to university so that I could devote myself full-time to making a move into a technology-driven career. 
+            </p>
+        </div>
+    </div>
+     
+
+<!-- CURRICULUM VITAE -->
+      
+<div class="row" id="cv">
+    <div class="col-12">
+        <h2>Curriculum Vitae</h2>
+    </div>
+    
+    <div class="container">
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseSkills">
+        <i class="fas fa-wrench"></i>  
+        Skills
+        </a>
+      </div>
+      <div id="collapseSkills" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <ul>
+              <li><b>Front-end web development</b> – Capable of developing and testing valid and accessible responsive websites with Foundation or pure HTML5/CSS3. Prior to my current degree, I built Sharepoint sites and created effective content structures for Bank of England web and intranet pages.</li>
+              <li><b>Web application development</b> – During my degree I have gained experience developing single-page web applications using Javascript/jQuery and Express.js/Node.js (both individually and collaboratively) and using Git for project workflow management. Projects created for this course included a quiz game, a multiplayer checkers game, two games for Latin language learning, a Twitter-style messaging web application, and a forum incorporating a database backend and the use of a number of APIs for local weather, mapping, and news.</li>
+                <li><b>Database maintenance and data analysis/manipulation</b> – Experience of designing, building and querying relational databases using MySQL, as well as visually representing spreadsheet data using the d3.js and c3.js libraries.</li>
+                <li><b>Drafting effective communications</b> – Significant experience of developing clear and concise written outputs for communication by web, print and presentation to internal (working level and senior) and external (public and industry) stakeholders of the Bank of England. This entailed summarising complex technical and legal subjects in an accessible yet legally sound style.</li>
+                <li><b>Stakeholder management and teamworking</b> – Experience with coordinating projects (e.g. policy development, policy consultations and communication outputs) that required input from a wide range of internal and external stakeholders including technical and legal staff, senior committees, and members of the financial services industry and public.</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+      
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseEducation">
+        <i class="fas fa-graduation-cap"></i> 
+        Education
+        </a>
+      </div>
+      <div id="collapseEducation" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <ul>
+              <li>
+                <b>University of St Andrews (September 2017 - August 2018) – MSc Computing and Information Technology</b>
+                <ul>
+                <li><b>Web technologies:</b> Provided practical static and responsive website development experience, including testing for user experience, accessibility, browser compatibility and HTML/CSS validation. </li>
+                <li><b>Programming Principles and Practice & Masters Programming Projects:</b> Two modules providing experience programming and testing single-page web applications, both independently and collaboratively, using Javascript, jQuery, Express.js, Node.js and other external libraries and APIs. Key outcomes included developing a quiz game, a messaging application, a multiplayer checkers game and a forum for local towns with API integration for weather, location mapping and news.</li>
+                <li><b>Database Management Systems:</b> Provided experience of relational database design, development and querying via mySQL.</li>
+                <li><b>Data Ethics and Privacy:</b> Studied key issues and regulation relating to the ethical handling of data, latterly focusing on the DGPR (including conducting mock Data Protection Impact Assessments).</li>
+                <li><b>Dissertation:</b> Design and development of interactive Latin Learning games for the University of St Andrews School of Classics. These were single-page word matching games developed mainly using jQuery, one of which included a user account system underpinned by a Node.js/Express.js REST API and a CouchDB noSQL database.</li>
+                  </ul>
+              </li>
+            <li>
+            <b>University of St. Andrews 2008/09 - MLitt International Business – Distinction</b>
+            <ul>
+                <li><b>Dissertation:</b> An examination into cross media marketing synergy between the videogame and music industries.</li>
+                <li><b>Key courses:</b> Global Business Studies, International Marketing, E-business, Marketing and Society, Corporate Finance and Accounting in a Global Context, and Managing Human Resources.</li>
+            </ul>
+            </li>
+            <li>
+            <b>University of St. Andrews 2004- 2008 – MA (Hons) Economics & International Relations – 2:1</b>
+            <ul>
+                <li><b>Key courses:</b> Advanced Macroeconomics, Advanced Microeconomics, Econometrics, International Security, The return of Great Power Politics, Economics of Social Life, and Ethics and World Politics.</li>
+            </ul>
+            </li>
+</ul>
+        </div>
+      </div>
+    </div>
+      
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseEmployment">
+        <i class="fas fa-briefcase"></i>
+        Employment
+        </a>
+      </div>
+      <div id="collapseEmployment" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <ul>
+            <li>
+              <b>Bank of England Prudential Regulation Authority (BoE PRA) / Financial Services Authority (FSA)      – various roles (April 2012-June 2017)</b>
+                <ul>
+                    <li>
+                        <b>Analyst - Recovery and Compensation Policy (January 2015 – June 2017)</b>
+                        Developed consumer protection policy and conducted statutory oversight of the Financial Services Compensation Service (FSCS) by:
+                        <ul>
+                            <li>Working on BofE/PRA policy approach to international Insurance Guarantee Scheme harmonisation and to FSCS funding under Solvency II insurance capital adequacy rules.</li>
+                            <li>Assessing FSCS budget and senior appointments, improving the PRA’s delivery process for FSCS oversight, and drafting relevant proposals for PRA Board, industry and public stakeholders.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Associate - Solvency II Communications Team (October 2013 - January 2015)</b>
+                        <p>Contributed to internal and external digital and non-digital communications of the PRA's implementation of Solvency II (SII) insurance capital adequacy regime in the UK by:</p>
+                        <ul>
+                            <li>Redesigning and maintaining the PRA SII implementation team’s intranet and web pages.</li>
+                            <li>Owning a weekly internal digital newsletter on SII legislation progress and implementation.</li>
+                            <li>Compiling regular Management Information for PRA Board on comms outputs and reach.</li>
+                            <li>Preparing and reviewing presentations on regulatory requirements for industry stakeholders.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Associate - Insurance Group Supervision (April 2012 - October 2013)</b>
+                        <p>Contributed to prudential supervision of a UK life insurer through:</p>
+                        <ul>
+                            <li>Governance tasks including reviewing firm Board effectiveness and executive incentivisation, reviewing prospective key executives, and participating in supervisory interviews.</li>
+                            <li>Analysing financial, regulatory, and operational risk reports to inform supervisory strategy.</li>
+                            <li>Coordinating and hosted strategic meetings with international regulatory bodies.</li>
+                        </ul>
+                    </li>
+                    </ul>
+              </li>
+              <li>      
+              <b>Promontory Financial Group - Analyst (Contract) (June 2010 - February 2011)</b>
+                    <p>Supported consulting teams and senior staff of a financial services regulatory consultancy by:</p>
+                    Contributing to reports and materials for public and private sector clients including Board effectiveness reviews and financial promotions workshops.
+             </li>
+            
+            </ul>
+        </div>
+      </div>
+    </div>
+      
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseOther">
+        <i class="far fa-smile"></i>  
+        Other
+        </a>
+      </div>
+      <div id="collapseOther" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <li><b>Guitar:</b> I am a keen guitarist, and prior to commencing my degree I spent a very rewarding month volunteering with <a href="https://www.facebook.com/theguitarsocialfoundation/">The Guitar Social Foundation</a>, which seeks to provide free music tuition to people affected by disabilities, mental health issues, or homelessness amongst other considerations.</li>
+        <li><b>Comedy:</b> While at University I took the opportunity to get involved with the Comedy Society, contributing a number of articles to the satirical student news site Salvator News, as well as contributing material for live panel and sketch shows.</li>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+</div>
+</div>   
+        
+      <hr class="d-sm-none">
+    </div>
+</div>
+    
+</br>
+      
+<!-- PROJECT SAMPLES -->
+    
+<div class="row" id="projects">
+    <div class="col">
+        <h3>Projects</h3>    
+        <p>The links below lead to a selection of projects developed as part of the MSc in Computing and IT.</p>
+    </div>
+</div>
+<div class="row" style="border: 1px solid lightgrey">    
+    <div class="col-sm-4">
+      <a href="musicDB/CS5002A3albums.html" class="projectLink"><h3>Album Data Table</h3></a>
+      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/albums.png">
+      <p>A table of data about best-selling albums that can be filtered by single or multiple criteria.</p>
+    </div>
+
+      <div class="col-sm-4">
+          <a href="client-running-checkers-app/checkers.html" class="projectLink"><h3>Checkers game</h3></a>
+          <img class="img-responsive img-thumbnail imgfit" src="siteimgs/checkers.png">
+          <p>A simple local two-player Checkers game made using jQuery.</p>
+    </div>
+
+    <div class="col-sm-4">
+        <a href="travelsite/travelsite.html" class="projectLink"><h3>Italia tours test webpage</h3></a>
+      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/website.png">
+      <p>A sample website for a fictitious travel agency made using the Foundation framework. Demonstrates features such as the carousel, accordion, and sticky "Magellan" navigation element.</p>
+    </div>
+
+  </div>
+<div class="row" style="border: 1px solid lightgrey">    
+    <div class="col-sm-4">
+        <a href="vgsales/overviewbar.html" class="projectLink"><h3>Videogame sales charts</h3></a>
+      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/gamesales2.png">
+      <p>Bar chart visualisation of the 100 top-selling videogames made using d3.js that can be viewed at higher and lower levels and filtered by different criteria, as well as displaying further data via tooltips. (Note: Must be viewed in Mozilla Firefox)</p>
+    </div>
+      
+    <div class="col-sm-4">
+        <a href="quiz/Quizgame.html" class="projectLink"><h3>Pub Quiz game</h3></a>
+      <img class="img-responsive img-thumbnail imgfit" src="siteimgs/quiz.png">
+      <p>A quiz game made using jQuery and the Quizdb API.</p>
+    </div>
+
+    <div class="col-sm-4">
+      <h3>More to come...</h3>
+      <div class="img-responsive img-thumbnail fakeimg imgfit"><i class="fas fa-ellipsis-h"></i></div>
+      <p>This page will be updated with further projects in time.</p>
+    </div>
+  </div>
+    
+</div>
+    
+</br>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Bootstrap site developed using resources adapted from tutorials at <a href="http://www.w3schools.com">w3schools.com</a></p>
+  <p>Icons are sourced under a free license from <a href="htp://www.fontawesome.com">Font Awesome</a></p>
+</div>
