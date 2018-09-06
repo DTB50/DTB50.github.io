@@ -23,8 +23,13 @@
     var jumpedRed = false;
     var jumpedx;
     var jumpedy;
+    var gameWon = false;
 
-// MAKE ARRAY OF CELL STATUSES - runs on server side at game start
+/////////////////////////////////////////////////////////////////////
+//  DISPLAY BOARD  //////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+    
+// MAKE ARRAY OF CELL STATUSES
     function createBoardArray() {
       var boardStatus = [];
         for (var y = 0; y < height; y++){
@@ -49,12 +54,12 @@
           }
           boardStatus.push(row);
         }
-        console.log("Board at array generation:")
-        console.log(boardStatus);
+//        console.log("Board at array generation:")
+//        console.log(boardStatus);
         return boardStatus;
       };
 
-//PLACE CHECKERS - also runs serverside at game start
+//PLACE CHECKERS
       function startPieces(){
         //make checker objects
         var boardStatus = createBoardArray();
@@ -74,20 +79,17 @@
             }
           }
         }
-        console.log("board at initial population");
-        console.log(boardStatus);
+//        console.log("board at initial population");
+//        console.log(boardStatus);
         return boardStatus;
       };
 
 
-//BUILD TABLE BASED ON ARRAY - happens client side (add GET request for boardStatus as JSON and convert)
+//BUILD TABLE BASED ON ARRAY
 function createBoard() {
   validMove = false;
   jumpedBlue = false;
   jumpedRed = false;
-  ////////////////////////////////////////////////////////////////////////////////
-  //SHOULD MOVE WINCHECK TO SERVER
-  ///////////////////////////////////////////////////////////////////////////////
   winCheck(Xleft, Oleft);
   $("#board").empty();
   console.log("turn = " + turn + " and pieceSelected = " + pieceSelected + " and jumpedRed is " + jumpedRed + " and jumpedBlue is " + jumpedBlue);
@@ -96,14 +98,10 @@ if (turn == 1){
  boardStatus = startPieces();
 }
 else {
-  /////////////////////////////////////////////////////////////////////////////
-  //fetch request goes here in final implementation to bring back new boardstatus
-  //ALSO REQUEST TURN, PLAYER, XSCORE, OSCORE BACK
-  ////////////////////////////////////////////////////////////////////////////
   boardStatus = boardStatus;
 }
-console.log("Board status updated at beginning of createboard")
-console.log(boardStatus);
+//console.log("Board status updated at beginning of createboard")
+//console.log(boardStatus);
 //make table
   let table = $('<table></table>').css('border','1px solid black').css('border-collapse', 'collapse');
 //make row
@@ -220,10 +218,78 @@ var cellID = 1;
   $('#board').append(table);
   $('#Xscore').html("Player X score is " + (12-Oleft));
   $('#Oscore').html("Player O score is " + (12-Xleft));
-  $('#playerTurn').html("Current Player: " + player);
-
+  if (gameWon == false) {
+      $('#playerTurn').html("Current Player: " + player);
+  }
+  else if (gameWon == true) {
+      $('#playerTurn').html(player);
+  }
 }
 
+
+//UPDATE BOARD CONTROL ARRAYS AFTER PLAYER MOVE
+function boardUpdate(boardStatus, selectedHTML, intendedHTML, selectedxpos, selectedypos, intendedxpos, intendedypos, jumpedRed, jumpedBlue) {
+//switch pieces as player specifies
+  var tempStore = boardStatus[intendedypos][intendedxpos];
+  console.log("value to be moved is: " + tempStore);
+  console.log("it will be replaced with" + boardStatus[selectedypos][selectedxpos]);
+  boardStatus[intendedypos][intendedxpos] = boardStatus[selectedypos][selectedxpos];
+  boardStatus[selectedypos][selectedxpos] = tempStore;
+//remove any jumped pieces
+  if (jumpedRed == true){
+    boardStatus[jumpedy][jumpedx] = "0";
+    Xleft--;
+    jumpedRed = false;
+  }
+  if (jumpedBlue == true){
+    boardStatus[jumpedy][jumpedx] = "0";
+    Oleft--;
+    jumpedBlue = false;
+  }
+//check for newly crowned kings
+  checkKing(boardStatus);
+//  console.log("at turn " + turn + " the board is:");
+//  console.log(boardStatus);
+//update round control variables - new turn, swap active player
+  turn++;
+    if (player == "X") {
+        player = "O";
+    }
+    else if (player == "O") {
+        player = "X";
+    }
+console.log("on turn " + turn + ", player = " + player);
+  pieceSelected = false;
+
+  createBoard();
+}
+    
+
+//CHECK IF ANY CHECKERS SHOULD BECOME KINGS
+function checkKing(boardStatus) {
+    //if there is a piece of the opposite side in the back row of one side, change that piece to a king
+    //scan bottom row for red Xs and replace with kings
+    for (var i = 7; i < height; i++) {
+        for (var j = 0; j < width; j++) {
+            if (boardStatus[i][j] == "X") {
+                boardStatus[i][j] = "|X|";
+            }
+        }
+    }
+    //scan top row for blue Os and replace with kings
+    for (var i = 0; i < 1; i++) {
+        for (var j = 0; j < width; j++) {
+            if (boardStatus[i][j] == "O") {
+                boardStatus[i][j] = "|O|";
+            }
+        }
+    }
+};
+    
+/////////////////////////////////////////////////////////////////////////////////
+//  MOVEMENT  ///////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+    
 //MOVE CELLS
 function move(currentCellID, currentxpos, currentypos, currentHTML, boardStatus) {
 
@@ -236,11 +302,11 @@ function move(currentCellID, currentxpos, currentypos, currentHTML, boardStatus)
     intendedHTML = currentHTML;
 
   //check position
-    console.log("AFTER choosing intended cell, selected cell " + selectedCellID + " is at x = " + selectedxpos + ", y=" + selectedypos + ". It contains the html " + selectedHTML)
-    console.log("value of intended space is: " + boardStatus[intendedypos][intendedxpos]);
+//    console.log("AFTER choosing intended cell, selected cell " + selectedCellID + " is at x = " + selectedxpos + ", y=" + selectedypos + ". It contains the html " + selectedHTML)
+//    console.log("value of intended space is: " + boardStatus[intendedypos][intendedxpos]);
 
 //VALIDATE MOVE - if valid, update board. If not, unselect square;
-  console.log("checking validity using selectedHTML = " + selectedHTML + ", intendedHTML =:" + intendedHTML + ", selectedxpos = " + selectedxpos + " and selectedypos = " + selectedypos);
+//  console.log("checking validity using selectedHTML = " + selectedHTML + ", intendedHTML =:" + intendedHTML + ", selectedxpos = " + selectedxpos + " and selectedypos = " + selectedypos);
 
   selectedxpos = parseInt(selectedxpos);
   selectedypos = parseInt(selectedypos);
@@ -277,13 +343,13 @@ function move(currentCellID, currentxpos, currentypos, currentHTML, boardStatus)
           jumpedy = validy;
           validMove = true;
         }
-/////////deselect piece - DOES NOT WORK - NEED WAY TO CANCEL OUT OF FUNCTION/////////////////////////////////////
+        //deselect piece if user reselects the same piece
         else if ((intendedxpos == selectedxpos) && (intendedypos == selectedypos)){
-            pieceSelected == false;
-            console.log("piece deselected: select again");
-            return;
-//NEED TO RESET SELECTEDXPOS AND SELECTEDYPOS?
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+          pieceSelected = false;
+          console.log("piece deselected: select again");
+          var selectedChecker = "#" + selectedCellID;
+          $(selectedChecker).css("background-color", "white");
+          validMove = false;
           }
         else {
           validMove = false;
@@ -338,10 +404,13 @@ function move(currentCellID, currentxpos, currentypos, currentHTML, boardStatus)
           jumpedy = validyup;
           validMove = true;
         }
+        //deselect piece if user reselects the same piece
         else if ((intendedxpos == selectedxpos) && (intendedypos == selectedypos)){
-            pieceSelected == false;
-            console.log("piece deselected: select again");
-            return;
+          pieceSelected = false;
+          console.log("piece deselected: select again");
+          var selectedChecker = "#" + selectedCellID;
+          $(selectedChecker).css("background-color", "white");
+          validMove = false;
           }
         else {
           validMove = false;
@@ -374,11 +443,14 @@ function move(currentCellID, currentxpos, currentypos, currentHTML, boardStatus)
             jumpedy = validy;
             validMove = true;
           }
+          //if user clicks on the checker, deselect it
           else if ((intendedxpos == selectedxpos) && (intendedypos == selectedypos)){
-              pieceSelected == false;
-              console.log("piece deselected: select again");
-              return;
-            }
+            pieceSelected = false;
+            console.log("piece deselected: select again");
+            var selectedChecker = "#" + selectedCellID;
+            $(selectedChecker).css("background-color", "white");
+            validMove = false;
+          }
           else {
             validMove = false;
           }
@@ -431,11 +503,14 @@ function move(currentCellID, currentxpos, currentypos, currentHTML, boardStatus)
       else if ((intendedxpos == validxR || intendedxpos == validxL) && (intendedypos == validydown) && (intendedHTML != "X" && intendedHTML !="O" && intendedHTML != "|O|" && intendedHTML != "|X|")){
         validMove = true;
       }
+    //deselect piece if user reselects the same piece
       else if ((intendedxpos == selectedxpos) && (intendedypos == selectedypos)){
-          pieceSelected == false;
-          console.log("piece deselected: select again");
-          return;
-        }
+        pieceSelected = false;
+        console.log("piece deselected: select again");
+        var selectedChecker = "#" + selectedCellID;
+        $(selectedChecker).css("background-color", "white");
+        validMove = false;
+      }
       else {
         validMove = false;
       }
@@ -490,81 +565,25 @@ function move(currentCellID, currentxpos, currentypos, currentHTML, boardStatus)
   }
 };
 
-//UPDATE BOARD CONTROL ARRAYS AFTER PLAYER MOVE
-function boardUpdate(boardStatus, selectedHTML, intendedHTML, selectedxpos, selectedypos, intendedxpos, intendedypos, jumpedRed, jumpedBlue) {
-//switch pieces as player specifies
-  var tempStore = boardStatus[intendedypos][intendedxpos];
-  console.log("value to be moved is: " + tempStore);
-  console.log("it will be replaced with" + boardStatus[selectedypos][selectedxpos]);
-  boardStatus[intendedypos][intendedxpos] = boardStatus[selectedypos][selectedxpos];
-  boardStatus[selectedypos][selectedxpos] = tempStore;
-//remove any jumped pieces
-  if (jumpedRed == true){
-    boardStatus[jumpedy][jumpedx] = "0";
-    Xleft--;
-    jumpedRed = false;
-  }
-  if (jumpedBlue == true){
-    boardStatus[jumpedy][jumpedx] = "0";
-    Oleft--;
-    jumpedBlue = false;
-  }
-//check for newly crowned kings
-  checkKing(boardStatus);
-  console.log("at turn " + turn + " the board is:");
-  console.log(boardStatus);
-//update round control variables - new turn, swap active player
-  turn++;
-    if (player == "X") {
-        player = "O";
-    }
-    else if (player == "O") {
-        player = "X";
-    }
-console.log("on turn " + turn + ", player = " + player);
-  pieceSelected = false;
-////////////////////////////////////////////////////////////////////////
-//PUT REQUEST TO SERVER - SEND NEW BOARDSTATUS TO BOARDSTATUS ENDPOINT
-//AND ALSO SEND VARIABLES TURN, PLAYER, XSCORE, OSCORE TO SERVER
-//////////////////////////////////////////////////////////////////////////
-  createBoard();
-}
 
-//CHECK IF ANY CHECKERS SHOULD BECOME KINGS
-function checkKing(boardStatus) {
-    //if there is a piece of the opposite side in the back row of one side, change that piece to a king
-    //scan bottom row for red Xs and replace with kings
-    for (var i = 7; i < height; i++) {
-        for (var j = 0; j < width; j++) {
-            if (boardStatus[i][j] == "X") {
-                boardStatus[i][j] = "|X|";
-            }
-        }
-    }
-    //scan top row for blue Os and replace with kings
-    for (var i = 0; i < 1; i++) {
-        for (var j = 0; j < width; j++) {
-            if (boardStatus[i][j] == "O") {
-                boardStatus[i][j] = "|O|";
-            }
-        }
-    }
-};
-
-
+////////////////////////////////////////////////////////////////
+//  ENDGAME  ///////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+    
+    
 //CHECK IF PLAYER HAS WON
 function winCheck (Xleft, Oleft) {
     if(Xleft == 0){
         $('#board').empty();
         $('#Xscore').html("Player X score is " + (12-Oleft));
         $('#Oscore').html("Player X score is " + (12-Xleft));
-        $('#playerTurn').html("Player O wins!");
+        player = "Player O wins!";
     }
     else if (Oleft == 0){
         $('#board').empty();
         $('#Xscore').html("Player X score is " + (12-Oleft));
         $('#Oscore').html("Player X score is " + (12-Xleft));
-        $('#playerTurn').html("Player X wins!");
+        player = "Player X wins!";
     }
     else {
         console.log("no winners yet at X: " + Xleft + "and O: " + Oleft);
@@ -572,9 +591,9 @@ function winCheck (Xleft, Oleft) {
     }
 };
 
-/////////////////////////////////////////////////////
-//  SETUP
-/////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+//  SETUP  /////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 $( function() {
   createBoard();
 });
