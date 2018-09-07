@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<style>
+#makeMeDraggable { width: 300px; height: 300px; background: red; }
+#alsoDraggable { width: 300px; height: 300px; background: blue; }
+/* #draggableHelper { width: 300px; height: 300px; background: red; } */
+
+#makeMeDraggable.ui-draggable-dragging {background: green;}
+
+#makeMeDroppable { float: right; width: 300px; height: 300px; border: 1px solid #999; }
+
+/* #content{
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+} */
+</style>
+ 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet"> -->
+ <script src="jQueryUI-touch-punch.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<link rel="stylesheet" href="gridGame2.css">
+<script type="text/javascript" src="gridgame.js"></script>
+
+ 
+</head>
+<body>
+  <!-- sound sourced from freesound.org user radian under creative commons license at https://freesound.org/people/radian/sounds/62977/ -->
+  <audio id="chime">
+    <source src="sounds/62977__radian__chime-0002.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- sound sourced from freesound.org user TheDweebMan under creative commons license at https://freesound.org/people/TheDweebMan/sounds/278164/  -->
+  <audio id="mistakeSound">
+    <source src="sounds/278164__thedweebman__8-bit-wrong-2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- sound sourced from freesound.org user klavo1985 under creative commons license at https://freesound.org/people/klavo1985/sounds/396043/  -->
+  <audio id="winMusic">
+    <source src="sounds/396043__klavo1985__ancient-addventure-music-by-kris-klavenes.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- sound sourced from freesound.org user priestjd under creative commons license at https://freesound.org/people/priestjd/sounds/84973/  -->
+  <audio id="loseMusic">
+    <source src="84973__priestjd__spooky-wood.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+<div id="gameBoard">
+  <div id="content"></div>
+  <div id="taskBar" class="taskBar"></div>
+</div>
+        <p style="font-size:12px">Game made by David Burns (david.burns.dtb@googlemail.com). </br>Chime sound effect by freesound.org user Radian, sourced (unaltered) under creative commons attribution license from https://freesound.org/people/radian/sounds/62977/</br>Spooky Wood music by freesound.org user priestjd, sourced (unaltered) under creative commons attribution license from https://freesound.org/people/priestjd/sounds/84973/</p>
+</body>
+</html>

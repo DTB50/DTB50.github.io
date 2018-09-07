@@ -1,0 +1,525 @@
+/* GRID GAME ELEMENTS */
+
+body {
+    font-family: 'Cormorant SC', serif;
+    font-size: 16px;
+    overflow-wrap: break-word;
+}
+
+.column {
+
+}
+
+#frame {
+
+}
+
+.titles{
+  /* height: 30px;
+  line-height: 30px; */
+  max-width: 300px;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: #99ff99;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.introText {
+  margin: auto;
+  width: 300px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  font-size: 16px
+}
+
+
+/* Game UI elements */
+
+.singleGameRow{
+  float: center;
+}
+
+#singleGameContentBox {
+    /* min-height: 470px; */
+    width: 470px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+    align-content: center;
+}
+
+#statusData{
+    width: 470px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#livesText{
+    width: 50px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#livesBox{
+    width: 150px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+.heartBox {
+    width: 25px;
+    height: 25px;
+    float: left;
+    padding: 5px;
+}
+
+.heart {
+  width: 100%;
+  height: 100%;
+}
+
+#timeText{
+    width: 150px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#timer{
+    width: 10px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#stageText{
+    width: 300px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#scoreText{
+    width: 180px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+/* grid game elements */
+
+/* outer grid */
+.grid {
+  float: left;
+  width: 110px;
+  height: 110px;
+  background-image: url("transparent.png");
+}
+
+.startButton {
+  width: 100px;
+  height: 100px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background: grey;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 100px;
+}
+/* draggable elements */
+.makeMeDraggable {
+  display: table;
+  width: 100px;
+  height: 100px;
+  background: #b3b3b3;
+  border-top: 3px solid #d9d9d9;
+  border-left: 3px solid #d9d9d9;
+  border-bottom: 3px solid #404040;
+  border-right: 3px solid #404040;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  vertical-align: middle;
+  /* line-height: 100px;
+  opacity: 1; */
+}
+
+.makeMeDraggable-hover {
+  display: table;
+  width: 100px;
+  height: 100px;
+  background: #80dfff;
+  border-top: 3px solid #d9d9d9;
+  border-left: 3px solid #d9d9d9;
+  border-bottom: 3px solid #404040;
+  border-right: 3px solid #404040;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  /* text-align: center;
+  vertical-align: middle; */
+  /* line-height: 100px; */
+}
+
+/* Centres text in cells - uses CSS styling from stackoverflow user Jason Gennaro in response to stackoverflow user Jose Faeti's query located  at https://stackoverflow.com/questions/7453868/how-can-i-make-my-text-appear-in-the-center-of-this-div-both-vetically-and-horiz */
+.centredText {
+  max-width: 100px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.makeMeDraggable.ui-draggable-dragging {
+  /* border: 3px solid black; */
+  background: #80dfff;
+}
+/* droppable elements */
+.makeMeDroppable {
+  display: table;
+  width: 100px;
+  height: 100px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background: #dd8a04;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  line-height: 100px;
+}
+
+.makeMeDroppable:disabled {
+  text-decoration-color: black;
+}
+
+/* feedback elements */
+#feedbackBox {
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.resultBox{
+  /* height: 30px;
+  line-height: 30px; */
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: white;
+}
+
+.feedbackRight {
+  width: 100px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: #8eed7d;
+}
+
+.feedbackLeftHidden {
+  width: 100px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+
+.feedbackWrong {
+  width: 100px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #8eed7d;
+}
+
+
+#rightHeadRow{
+    height: 50;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: #8eed7d;
+}
+
+.rightHeadCell{
+    height: 50;
+    width: 200;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: #8eed7d;
+}
+
+#wrongHeadRow{
+    height: 50;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: red;
+}
+
+#alertBox {
+
+}
+
+/* BOARD GAME ELEMENTS */
+
+#content{
+    /* height: 800px; */
+    width: 560px;
+    min-height: 560px;
+    margin: auto;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+}
+
+.water{
+  height: 70px;
+  width: 70px;
+  background-image: url("water.png");
+  background-size: contain;
+  float: left;
+}
+
+.ground{
+  height: 70px;
+  width: 70px;
+  background-image: url("grass.png");
+  background-size: contain;
+  float: left;
+}
+
+.player{
+  height: 70px;
+  width: 70px;
+  background-image: url("centurion.png");
+  background-size: contain;
+  float: left;
+}
+
+.endpoint{
+  height: 70px;
+  width: 70px;
+  background-image: url("woman.png");
+  background-size: contain;
+  float: left;
+}
+
+.headWordSquare {
+  height: 70px;
+  width: 70px;
+  font-size: 12px;
+  background-image: url("grassunderlay.png");
+  background-size: contain;
+  float: left;
+  text-align: center;
+  line-height: 70px;
+}
+
+.headWordSquare:hover {
+  background: url("pointer.png");
+  background-size: contain;
+}
+
+.gambleSquare {
+  height: 70px;
+  width: 70px;
+  font-size: 12px;
+  background-image: url("grassjumpunderlay.png");
+  background-size: contain;
+  float: left;
+  text-align: center;
+  line-height: 70px;
+}
+
+.gambleSquare:hover {
+  background: url("jumppointer.png");
+  background-size: contain;
+}
+
+.miniGameContent{
+  width: 470px;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+}
+
+
+.headWordBox{
+  height: 100px;
+  line-height: 100px;
+  width: 400px;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: orange;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.miniGameBox{
+  /* height: 30px;
+  line-height: 30px; */
+  width: 340px;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: white;
+}
+
+.padding{
+  height: 50px;
+  background: url("transparent.png");
+  background-size: contain;
+}
+
+
+.winMessage {
+    margin: auto;
+    max-width: 300px;
+    padding: 10px;
+    border-top: 3px solid lightgrey;
+    border-left: 3px solid lightgrey;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    background-color: white;
+}
+
+.winImage {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-image: url("domus.png");
+}
+
+.loseImage {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-image: url("camping.png");
+}
+
+
+/* ASSETS FOR MAIN GAME UI */
+
+.gridGameTimerBox {
+  width: 560px;
+  min-height: 80px;
+  margin: auto;
+  padding-top: 5px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.dayBox {
+  width: 70px;
+  height:70px;
+  border: 1px solid black;
+  background-image: url("sun.png");
+  background-size: contain;
+  float: left;
+}
+
+.nightBox {
+  width: 70px;
+  height:70px;
+  border: 1px solid black;
+  background-image: url("moon.png");
+  background-size: contain;
+  float: right;
+}
+
+.progressBarBox {
+  width: 300px;
+  height: 72px;
+  background: #d9d9d9;
+}
+
+.timerBar {
+  width: 0%;
+  height: 72px;
+  background-color: #009900;
+}
+
+#timeTable {
+  margin: auto;
+}
+
+.timeRow {
+    margin: auto;
+}
+
+.taskBar {
+  width: 560px;
+  min-height: 30px;
+  margin: auto;
+  padding-top: 5px;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+}

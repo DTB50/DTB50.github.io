@@ -1,0 +1,5 @@
+READ ME: Instructions to operate board game
+
+The files in the folder marked gridGame work entirely on the client side, and can simply be run and accessed through the internet by placing the file in an nginx folder and accessing via the user’s host filepath (username.host.cs.st-andrews.ac.uk/  ... /040008118DissertationBoardGame/gridgame.html).
+
+Replace ... with the filepath from the nginx default folder to the 040008118DissertationBoardGame folder.
