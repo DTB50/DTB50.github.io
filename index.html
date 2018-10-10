@@ -11,7 +11,8 @@
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <style type="text/css">
-
+        
+        
         .fakeimg {
               height: 200px;
             background-color: #aaa;
@@ -32,7 +33,7 @@
 
         .projectLink {
             color: black !important;
-            text-decoration: underline; 
+            text-decoration: none; 
         }
 
         .projectLink:hover{
@@ -91,8 +92,11 @@
         <a class="nav-link" href="#cv">Curriculum Vitae</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#projects">Active Projects</a>
       </li>  
+          <li class="nav-item">
+        <a class="nav-link" href="#fsCodeSamples">Full-stack Code Samples</a>
+      </li> 
     </ul>
   </div>  
 </nav>
@@ -352,7 +356,7 @@
     </div>
     
   <div class="col-sm-4 projectBox text-center">
-    <a href="latinboardgame/gridgame.html" class="projectLink"><h3>Latin synonym matching game</h3></a>
+    <a href="latinboardgame/gridgame.html" class="projectLink"><h3>Latin synonym game</h3></a>
       <a href="latinboardgame/gridgame.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/latinboardgame.png"></a>
       <p>Latin synonym-matching game developed as part of my dissertation. Please view in Chrome or Safari.</p>
     </div>
@@ -366,20 +370,20 @@
     </div>
   </div>
     
-<div class="col">
+<div class="col" id="fsCodeSamples">
         <h2>Full-stack code samples</h2>    
         <p>The links below lead to a repositories for a selection of projects developed as part of the MSc in Computing and IT. These were configured to work on the School of Computer Science network and are not presently hosted externally and will need reworking to function externally. (note that npm dependencies are not included but listed through the relevant package files)</p>
     </div>
 <div class="row">    
     <div class="col-sm-4 projectBox text-center">
-      <a href="https://github.com/DTB50/Dissertation"><h3>Latin synonym game with node/express backend</h3></a>
-        <a href="https://github.com/DTB50/Dissertation" class="projectLink"><div class="img-responsive center-block img-thumbnail fakeimg imgfit projectImg"><i class="fas fa-ellipsis-h"></i></div></a>
-      <p>A Latin synonym-matching game with user accounts enabled through a node/express API and a CouchDB database configured to run from </p>
+      <a href="https://github.com/DTB50/Dissertation" class="projectLink"><h3>Latin synonym game with user accounts</h3></a>
+        <a href="https://github.com/DTB50/Dissertation"><div class="img-responsive center-block img-thumbnail fakeimg imgfit projectImg"><i class="fas fa-ellipsis-h"></i></div></a>
+      <p>A Latin synonym-matching game with user accounts enabled through a node/express API and a CouchDB noSQL database configured to run from a university network server.</p>
     </div>
     
     <div class="col-sm-4 projectBox text-center">
-      <a href="https://github.com/DTB50/Other-coursework-code" class="projectLink"><h3>Networked multiplayer checkers</h3></a>
-    <a href="</a>"></a><div class="img-responsive center-block img-thumbnail fakeimg imgfit projectImg"><i class="fas fa-ellipsis-h"></i></div></a>
+      <a href="https://github.com/DTB50/Other-coursework-code" class="projectLink"><h3>Networked multiplayer checkers game</h3></a>
+    <a href="https://github.com/DTB50/Other-coursework-code"><div class="img-responsive center-block img-thumbnail fakeimg imgfit projectImg"><i class="fas fa-ellipsis-h"></i></div></a>
       <p>A two-player checkers game designed to be played over the university network via a node/express API.</p>
     </div>
   </div>
