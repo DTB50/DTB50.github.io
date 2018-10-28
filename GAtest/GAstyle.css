@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+}
+
+#storeheader {
+    background-color: lightblue;
+    font-size: 6vh;
+    font-family: sans-serif;
+    height: 15vh;
+}
+
+#table {
+    border: 1px solid black;
+}
+
+#productcontent {
+    display: inline;
+}
+
+#productpic {
+    display: inline;
+    float: left;
+}
+
+#details {
+    display: inline;
+    float; left;
+}
+
+.red {
+    color: red;
+}
