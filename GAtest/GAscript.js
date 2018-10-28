@@ -7,9 +7,6 @@ function trackAddToCart() {
     var productSize = document.getElementsByClassName("size")[0].innerHTML;
     var productId = id;
     var productPrice = "20.50";
-    console.log(productName);
-    console.log(productSize);
-    id++;
     
     //assemble a product field object of data
     ga("ec:addProduct", {
