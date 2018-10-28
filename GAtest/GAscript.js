@@ -6,6 +6,7 @@ function trackAddToCart() {
     var productName = document.getElementById("productname").innerHTML;
     var productSize = document.getElementsByClassName("size")[0].innerHTML;
     var productId = id;
+    var productPrice = 20.50;
     console.log(productName);
     console.log(productSize);
     id++;
@@ -14,7 +15,8 @@ function trackAddToCart() {
     ga("ec:addProduct", {
       "id": productId,
       "name": productName,
-      "size": productSize,
+      "variant": productSize,
+      "price": productPrice,
       "quantity": 1
     });
     //determine the trigger to send it
