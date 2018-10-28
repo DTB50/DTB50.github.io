@@ -12,7 +12,7 @@ function trackAddToCart() {
     ga("ec:addProduct", {
       "id": productId,
       "name": productName,
-      "variant": productSize,
+      "size": productSize,
       "price": productPrice,
       "quantity": 1
     });
