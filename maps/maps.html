@@ -1,32 +1,47 @@
 <html>
 
 	<head>
-		
 		<script type="text/javascript" src="libraries/d3.min.js"></script> 
-		
+<!--		<script src="https://d3js.org/d3.v5.min.js"></script>-->
 		<!-- include the path to the leaflet.js library -->
 		<script type="text/javascript" src="libraries/leaflet.js"></script>
 		
 		<!-- include external stylesheet for leaflet -->
 		<link rel="stylesheet" href="libraries/leaflet.css"/>
 		
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 		<!-- define width and height of the div with the name/id "map" -->
 		<!-- the # indicates that "map" is an id -->
 		<style>
 			#map
 			{
-				width: 100%;
+				width: 50%;
 				height: 90%;
 			}
+            
+            
+            body {
+                font-family: 'Orbitron', sans-serif;
+                background-color: black;
+                color: white;
+            }
+            
+            #controls {
+                float: left;
+            }
 		</style>
 		
 		
-		<title> D3 Tutorial </title>
+		<title>D3 UFO sighting map</title>
 	</head>
 
 	<body>
-		<h2>Working with Leaflet.js</h2>
-		
+		<h2>UFO Sighting Map</h2>
+				
+        <div id="controls">
+        <button onclick="minusYear()">-1 year</button><p id="year"></p><button onclick="addYear()">+1 year</button>
+        
+        </div>
 		<!-- div container element with the id "map" -->
 		<div id="map">				
 		
@@ -35,7 +50,7 @@
 		<script>
 			
 			//this is where we add a simple map in open street map style into our div element
-			var map = L.map('map').setView([55.9531, -3.1889], 11);			// the first array includes the latitude and longitude in the centre
+			var map = L.map('map').setView([55.9531, -3.1889], 5);			// the first array includes the latitude and longitude in the centre
 																			//the integer value (11) indicates the zoom level
 			
 			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{
@@ -43,16 +58,76 @@
 				}).addTo(map);
             
             
-            var dataPath = "edinburghlocations.csv";
+            var myIcon = L.icon({
+                iconUrl: 'images/ufo.png',
+                iconSize: [30, 30],
+                iconAnchor: [0, 30],
+                popupAnchor: [0, 20],
+            });
+
+            var dataPath = "ufo-sightings/complete.csv";
+//            var dataPath = "edinburghLocations.csv";
+            
+            var year = 2000;
+            
+            var currentLayer;
+            
+            var markersLayer = new L.LayerGroup();
             
             d3.csv(dataPath, function(error, data){
                 var myData = data;
                 console.log(data);
-                
+                var marker;
                 myData.forEach(function(d){
-                    L.marker([d.lat, d.lon]).addTo(map);
+                    if (d.country == "gb" && d.datetime.substr(6, 4) == year){
+                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map);
+                        currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
+                        markersLayer.addLayer(marker); 
+                        markersLayer.addTo(map);
+                    }
                 })
             })
+            
+            function addYear() {
+                year++;
+                displayYear();
+                console.log(year);
+                reload();
+            }
+            
+            function minusYear() {
+                year--;
+                displayYear();
+                console.log(year);
+                reload();
+            }
+            
+            function reload() {
+                markersLayer.remove();
+                markersLayer.clearLayers();
+                d3.csv(dataPath, function(error, data){
+                var myData = data;
+                console.log(data);
+                
+                myData.forEach(function(d){
+                    if (d.country == "gb" && d.datetime.substr(6, 4) == year){
+                        if (d.country == "gb" && d.datetime.substr(6, 4) == year){
+                            marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map);
+                            currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
+                            markersLayer.addLayer(marker); 
+                            markersLayer.addTo(map);
+                    }
+                    }
+                })
+            })
+            }
+            
+            function displayYear() {
+                document.getElementById("year").innerHTML = year;
+            }
+            
+            displayYear();
+            
 		</script>
 		
 	</body>
