@@ -18,12 +18,14 @@
                 margin-left: auto;
                 margin-right: auto;
                 width: 95%;
+                text-align: center;
             }
             
             #title {
                 margin-left: auto;
                 margin-right: auto;
                 text-align: center;
+                font-size: 2em;
             }
             
 			#map{
@@ -54,7 +56,18 @@
                 display: inline;
                 margin-left: auto;
                 margin-right: auto;
-                
+                font-size: 2em;
+            }
+            
+            #sightings {
+                text-align: center;
+                font-family: 'Orbitron', sans-serif;
+                background-color: black;
+                color: white;
+                display: inline;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 1.2em;
             }
             
             
@@ -84,10 +97,13 @@
             
             <!-- CONTROLS -->
             <div id="controls">
-                <div class="buttons" onclick="addYear()">+</div>
-                <p class="buttons" id="year"></p>
                 <div class="buttons" onclick="minusYear()">-</div>
+                <p class="buttons" id="year"></p>
+                <div class="buttons" onclick="addYear()">+</div>
             </div>
+            
+            <!-- INFORMATION -->
+            <p class="sightings" id="sightings"></p>
 
             <!-- MAP -->
             <div id="map">				
@@ -116,7 +132,7 @@
             
             //on load, place markers for all UK-based sightings in the year 2000
             var year = 2000;
-            
+            var sightings = 0;
             var currentLayer;
             
             //make a new layer group
@@ -129,6 +145,7 @@
                 var marker;
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
+                        sightings++;
                         //place marker using UFO icon
                         var markerText = "City" + d.city;
                         marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
@@ -155,6 +172,7 @@
             }
             
             function reload() {
+                sightings = 0;
                 markersLayer.remove();
                 markersLayer.clearLayers();
                 d3.csv(dataPath, function(error, data){
@@ -163,6 +181,7 @@
                 
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
+                        sightings++;
                         if (d.country == "gb" && d.datetime.substr(6, 4) == year){
                             marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)                  .bindTooltip("<b>City: </b>"  + d.city.substring(0, d.city.indexOf("("))  + "<br><b>Type: </b>" + d.shape);
                             currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
@@ -172,6 +191,7 @@
                     }
                 })
             })
+            displaySightings();
             }
             
             function displayYear() {
@@ -179,6 +199,11 @@
             }
             
             displayYear();
+            
+            function displaySightings() {
+                document.getElementById("sightings").innerHTML = "Sightings: " + sightings;
+            }
+            displaySightings();
             
 		</script>
 		
