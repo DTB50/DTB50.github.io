@@ -84,7 +84,8 @@
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
                         //place marker using UFO icon
-                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}, {title: "City" + d.city}).addTo(map);
+                        var markerText = "City" + d.city;
+                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon, title: markerText).addTo(map);
                         currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
                         markersLayer.addLayer(marker); 
                         markersLayer.addTo(map);
