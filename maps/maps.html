@@ -145,7 +145,7 @@
                 var marker;
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
-                        sightings++;
+                        sightings+=1;
                         //place marker using UFO icon
                         var markerText = "City" + d.city;
                         marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
@@ -156,6 +156,7 @@
                     }
                 })
             })
+            displaySightings();
             
             function addYear() {
                 year++;
@@ -181,7 +182,7 @@
                 
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
-                        sightings++;
+                        sightings+=1;
                         if (d.country == "gb" && d.datetime.substr(6, 4) == year){
                             marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)                  .bindTooltip("<b>City: </b>"  + d.city.substring(0, d.city.indexOf("("))  + "<br><b>Type: </b>" + d.shape);
                             currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
@@ -202,8 +203,8 @@
             
             function displaySightings() {
                 document.getElementById("sightings").innerHTML = "Sightings: " + sightings;
+                console.log("sightings: " + sightings);
             }
-            displaySightings();
             
 		</script>
 		
