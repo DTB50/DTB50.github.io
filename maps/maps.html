@@ -13,9 +13,24 @@
 		<!-- define width and height of the div with the name/id "map" -->
 		<!-- the # indicates that "map" is an id -->
 		<style>
+            #content {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 95%;
+            }
+            
+            #title {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            
 			#map{
 				width: 50%;
 				height: 90%;
+                margin-left: auto;
+                margin-right: auto;
 			}
             
             
@@ -23,16 +38,23 @@
                 font-family: 'Orbitron', sans-serif;
                 background-color: black;
                 color: white;
+                align-content: center;
             }
             
             #controls {
-                float: left;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .buttons {
                 font-family: 'Orbitron', sans-serif;
                 background-color: black;
                 color: white;
+                display: inline;
+                margin-left: auto;
+                margin-right: auto;
+                
             }
             
             
@@ -46,10 +68,6 @@
                   width: 90%;
                   height: 90%;
             }
-              
-            #controls {
-                display: inline-block;
-            }
 
         }
 		</style>
@@ -61,19 +79,20 @@
     
 	<body>
         <!-- TITLE -->
-		<h2>UFO Sighting Map</h2>
-				
-        <!-- CONTROLS -->
-        <div id="controls">
-            <div onclick="addYear()">+</div>
-            <p id="year"></p>
-            <div onclick="minusYear()">-</div>
-        </div>
-        
-		<!-- MAP -->
-		<div id="map">				
+		<h2 id="title">UFO Sighting Map</h2>
+        <div id="content">
+            
+            <!-- CONTROLS -->
+            <div id="controls">
+                <div class="buttons" onclick="addYear()">+</div>
+                <p class="buttons" id="year"></p>
+                <div class="buttons" onclick="minusYear()">-</div>
+            </div>
+
+            <!-- MAP -->
+            <div id="map">				
+            </div>
 		</div>
-		
 		<script>
 			
 			//add open street map element to div
