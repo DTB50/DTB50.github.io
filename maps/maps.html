@@ -84,15 +84,7 @@
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
                         //place marker using UFO icon
-                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
-                            //make a popup appear on click
-                            .bindPopup("City: " + d.city <br>"Type: " + d.shape);
-                            marker.on('mouseover', function (e) {
-                                    this.openPopup();
-                            });
-                            marker.on('mouseout', function (e) {
-                                this.closePopup();
-                            });
+                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}, {title: "City" + d.city}).addTo(map);
                         currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
                         markersLayer.addLayer(marker); 
                         markersLayer.addTo(map);
