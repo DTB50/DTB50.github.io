@@ -49,7 +49,7 @@
 		
 		<script>
 			
-			//this is where we add a simple map in open street map style into our div element
+			//add open street map element to div
 			var map = L.map('map').setView([55.9531, -3.1889], 5);			// the first array includes the latitude and longitude in the centre
 																			//the integer value (11) indicates the zoom level
 			
@@ -80,7 +80,7 @@
                 var marker;
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
-                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map);
+                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map).bindPopup("Test: Data goes here");
                         currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
                         markersLayer.addLayer(marker); 
                         markersLayer.addTo(map);
