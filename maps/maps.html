@@ -86,7 +86,7 @@
                         //place marker using UFO icon
                         var markerText = "City" + d.city;
                         marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
-                        .bindTooltip("City" + d.city);
+                        .bindTooltip("<b>City: </b>"  + d.city  + "<br><b>Type: </b>" + d.shape);
                         currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
                         markersLayer.addLayer(marker); 
                         markersLayer.addTo(map);
