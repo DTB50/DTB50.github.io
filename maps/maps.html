@@ -68,19 +68,25 @@
             var dataPath = "ufo-sightings/complete.csv";
 //            var dataPath = "edinburghLocations.csv";
             
+            //on load, place markers for all UK-based sightings in the year 2000
             var year = 2000;
             
             var currentLayer;
             
+            //make a new layer group
             var markersLayer = new L.LayerGroup();
             
+            //fill the layer with UFO elements for each UK-based UFO sighting
             d3.csv(dataPath, function(error, data){
                 var myData = data;
                 console.log(data);
                 var marker;
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
-                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map).bindPopup("Test: Data goes here");
+                        //place marker using UFO icon
+                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
+                            //make a popup appear on click
+                            .bindPopup(<b>"City"<b> + d.city);
                         currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
                         markersLayer.addLayer(marker); 
                         markersLayer.addTo(map);
