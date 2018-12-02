@@ -13,8 +13,7 @@
 		<!-- define width and height of the div with the name/id "map" -->
 		<!-- the # indicates that "map" is an id -->
 		<style>
-			#map
-			{
+			#map{
 				width: 50%;
 				height: 90%;
 			}
@@ -29,22 +28,50 @@
             #controls {
                 float: left;
             }
+            
+            .buttons {
+                font-family: 'Orbitron', sans-serif;
+                background-color: black;
+                color: white;
+            }
+            
+            
+            /* Portrait and Landscape */
+        @media only screen 
+          and (min-device-width: 375px) 
+          and (max-device-width: 667px) 
+          and (-webkit-min-device-pixel-ratio: 2) { 
+              
+            #map {
+                  width: 90%;
+                  height: 90%;
+            }
+              
+            #controls {
+                display: inline-block;
+            }
+
+        }
 		</style>
 		
 		
-		<title>D3 UFO sighting map</title>
+        <title>D3 UFO sighting map</title>
 	</head>
 
+    
 	<body>
+        <!-- TITLE -->
 		<h2>UFO Sighting Map</h2>
 				
+        <!-- CONTROLS -->
         <div id="controls">
-        <button onclick="minusYear()">-1 year</button><p id="year"></p><button onclick="addYear()">+1 year</button>
-        
+            <div onclick="addYear()">+</div>
+            <p id="year"></p>
+            <div onclick="minusYear()">-</div>
         </div>
-		<!-- div container element with the id "map" -->
+        
+		<!-- MAP -->
 		<div id="map">				
-		
 		</div>
 		
 		<script>
