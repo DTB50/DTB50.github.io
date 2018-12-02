@@ -86,7 +86,7 @@
                         //place marker using UFO icon
                         marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
                             //make a popup appear on click
-                            .bindPopup(<b>"City"<b> + d.city);
+                            .bindPopup(<b>d.city<b>);
                         currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
                         markersLayer.addLayer(marker); 
                         markersLayer.addTo(map);
