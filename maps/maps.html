@@ -144,6 +144,7 @@
                 console.log(data);
                 var marker;
                 var myDataParsed = [];
+                
                 //parse the data by the filter category
                 myData.forEach(function(d){
                     if (d.country == "gb" && d.datetime.substr(6, 4) == year){
@@ -165,7 +166,7 @@
                     markersLayer.addLayer(marker); 
                     markersLayer.addTo(map);
                 })
-            })
+            });
             
             function addYear() {
                 year++;
@@ -186,34 +187,32 @@
                 sightings = 0;
                 markersLayer.remove();
                 markersLayer.clearLayers();
+                myDataParsed = [];
+                
                 d3.csv(dataPath, function(error, data){
-                var myData = data;
-                console.log(data);
-                
-                 //parse the data by the filter category
-                myData.forEach(function(d){
-                    if (d.country == "gb" && d.datetime.substr(6, 4) == year){
-                        sightings+=1;
-                        myDataParsed.push(d);
-                    }
-                    console.log(myDataParsed);
+                    var myData = data;
+                    console.log(data);
+                //parse the data by the filter category
+                    myData.forEach(function(d){
+                        if (d.country == "gb" && d.datetime.substr(6, 4) == year){
+                            sightings+=1;
+                            myDataParsed.push(d);
+                        }
+                        console.log(myDataParsed);
+                    })
+                //update the sightings count
+                    displaySightings();
+
+                //place markers for all filtered data elements using UFO icon
+                    myDataParsed.forEach(function(d){
+                        var markerText = "City" + d.city;
+                        marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
+                        .bindTooltip("<b>City: </b>"  + d.city.substring(0, d.city.indexOf("("))  + "<br><b>Type: </b>" + d.shape);
+                        currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
+                        markersLayer.addLayer(marker); 
+                        markersLayer.addTo(map);
+                    })
                 })
-                
-            //update the sightings count
-                displaySightings();
-                
-            //place markers for all filtered data elements using UFO icon
-                myDataParsed.forEach(function(d){
-                    var markerText = "City" + d.city;
-                    marker = L.marker([d.latitude, d.longitude], {icon: myIcon}).addTo(map)
-                    .bindTooltip("<b>City: </b>"  + d.city.substring(0, d.city.indexOf("("))  + "<br><b>Type: </b>" + d.shape);
-                    currentLayer = L.marker([d.latitude, d.longitude], {icon: myIcon});
-                    markersLayer.addLayer(marker); 
-                    markersLayer.addTo(map);
-                })
-                })
-            })
-            displaySightings();
             }
             
             function displayYear() {
