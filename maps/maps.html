@@ -179,10 +179,10 @@
                       .data(myDataByYear)
                     .enter().append("rect")
                       .attr("class", "bar")
-                      .attr("x", function(d) { return x(d.year); })
+                      .attr("x", function(d) { return d.year; })
                       .attr("width", x.bandwidth())
-                      .attr("y", function(d) { return y(d.sightingCount); })
-                      .attr("height", function(d) { return height - y(d.sightingCount); });
+                      .attr("y", function(d) { return d.sightingCount; })
+                      .attr("height", function(d) { return height - d.sightingCount; });
 
                   // add the x Axis
                   svg.append("g")
