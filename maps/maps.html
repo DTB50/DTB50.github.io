@@ -111,6 +111,7 @@
 		</div>
 		<script>
 			
+            //HAPPENS ON LOAD ----------------------------------------------------------
 			//add open street map element to div
 			var map = L.map('map').setView([55.9531, -3.1889], 5);			// the first array includes the latitude and longitude in the centre
 																			//the integer value (11) indicates the zoom level
@@ -169,21 +170,10 @@
                 })
             });
             
-            function addYear() {
-                year++;
-                displayYear();
-                console.log(year);
-                reload();
-            };
-            
-            function minusYear() {
-                year--;
-                displayYear();
-                console.log(year);
-                reload();
-            };
+            //SUPPORTING FUNCTIONS ------------------------------------------------------------
             
             function reload() {
+                //reset data and display layers
                 console.log("changing year to " + year);
                 sightings = 0;
                 markersLayer.remove();
@@ -193,6 +183,7 @@
                 d3.csv(dataPath, function(error, data){
                     var myData = data;
                     console.log(data);
+                    var myDataParsed = [];
                 //parse the data by the filter category
                     myData.forEach(function(d){
                         if (d.country == "gb" && d.datetime.substr(6, 4) == year){
@@ -215,6 +206,20 @@
                         markersLayer.addTo(map);
                     })
                 })
+            };
+            
+            function addYear() {
+                year++;
+                displayYear();
+                console.log(year);
+                reload();
+            };
+            
+            function minusYear() {
+                year--;
+                displayYear();
+                console.log(year);
+                reload();
             };
             
             function displayYear() {
