@@ -111,8 +111,39 @@
 		</div>
 		<script>
 			
-            //HAPPENS ON LOAD ----------------------------------------------------------
-			//add open street map element to div
+    //INITIAL PAGE SETUP: HAPPENS ON LOAD -------------------------------------------------------
+			
+            window.onload function () {
+            
+            //BAR CHART
+            d3.csv(dataPath, function(error, data){
+                var myData = data;
+                console.log(data);
+                var myDataByYear = [];
+                
+            //calculate number of occurrences per year in the UK
+                for (var year = 1955; year < 2015; year++){
+                    let sightingCount = 0;
+                    myData.forEach(function(d){
+                        if (d.country == "gb" && d.datetime.substr(6, 4) == year){
+                            sightingCount++;
+                            var yearObject = {
+                                year: year,
+                                sightingCount: sightingCount
+                            }
+                            myDataByYear.push(yearObject);
+                        }
+                    })
+                }
+                console.log(myDataByYear);
+                
+            //Put the occurrences into a bar chart - make each bar clickable to toggle the year
+                
+            
+            });
+                
+            //MAP
+            //add open street map element to div
 			var map = L.map('map').setView([55.9531, -3.1889], 5);			// the first array includes the latitude and longitude in the centre
 																			//the integer value (11) indicates the zoom level
 			
@@ -169,8 +200,10 @@
                     markersLayer.addTo(map);
                 })
             });
+                
+            }();
             
-            //SUPPORTING FUNCTIONS ------------------------------------------------------------
+    //SUPPORTING FUNCTIONS -------------------------------------------------------------------
             
             function reload() {
                 //reset data and display layers
