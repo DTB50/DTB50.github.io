@@ -105,6 +105,9 @@
             <!-- INFORMATION -->
             <p class="sightings" id="sightings"></p>
 
+            <!-- BAR CHART -->
+            <div  id="bar-chart"></div>
+            
             <!-- MAP -->
             <div id="map">				
             </div>
@@ -141,7 +144,33 @@
                 console.log(myDataByYear);
                 
             //Put the occurrences into a bar chart - make each bar clickable to toggle the year
-                
+            //  the size of the overall svg element
+            var height = 200,
+                width = 720,
+
+            //  the width of each bar and the offset between each bar
+                barWidth = 0.5*(width/myDataByYear.length),
+                barOffset = 0.2*(width/myDataByYear.length);
+
+
+            d3.select('#bar-chart').append('svg')
+              .attr('width', width)
+              .attr('height', height)
+              .style('background', black)
+              .selectAll('rect').data(myDataByYear)
+              .enter().append('rect')
+                .style({'fill': '#3c763d', 'stroke': '#d6e9c6', 'stroke-width': '5'})
+                .attr('width', barWidth)
+                .attr('height', function (data) {
+                    return data;
+                })
+                .attr('x', function (data, i) {
+                    return i * (barWidth + barOffset);
+                })
+                .attr('y', function (data) {
+                    return height - data;
+                });
+
             
             });
                 
