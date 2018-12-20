@@ -168,7 +168,9 @@
                 }
                 //show the complete array of data by year
                 console.log(myDataByYear);
-
+                
+                //now visualise the data
+                let data = myDataByYear;
                   // Scale the range of the data in the domains
                   x.domain(data.map(function(d) { return d.year; }));
                   y.domain([0, d3.max(data, function(d) { return d.sightingCount; })]);
