@@ -151,8 +151,9 @@
                         sightings+=1;
                         myDataParsed.push(d);
                     }
-                })
-                console.log(myDataParsed);
+                });
+                
+//                console.log(myDataParsed);
                 
             //update the sightings count
                 displaySightings();
@@ -166,21 +167,21 @@
                     markersLayer.addLayer(marker); 
                     markersLayer.addTo(map);
                 })
-            })
+            });
             
             function addYear() {
                 year++;
                 displayYear();
                 console.log(year);
                 reload();
-            }
+            };
             
             function minusYear() {
                 year--;
                 displayYear();
                 console.log(year);
                 reload();
-            }
+            };
             
 //            function reload() {
 //                console.log("changing year to " + year);
@@ -217,14 +218,14 @@
             
             function displayYear() {
                 document.getElementById("year").innerHTML = year;
-            }
+            };
             
             displayYear();
             
             function displaySightings() {
                 document.getElementById("sightings").innerHTML = "Sightings: " + sightings;
                 console.log("sightings: " + sightings);
-            }
+            };
             
 		</script>
 		
