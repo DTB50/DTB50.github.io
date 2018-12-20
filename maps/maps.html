@@ -122,19 +122,22 @@
                 var myDataByYear = [];
                 
             //calculate number of occurrences per year in the UK
+                //for each year in the dataset for the UK (1955-2014), count how many sightings occur
                 for (var year = 1955; year < 2015; year++){
                     let sightingCount = 0;
                     myData.forEach(function(d){
                         if (d.country == "gb" && d.datetime.substr(6, 4) == year){
                             sightingCount++;
-                            var yearObject = {
-                                year: year,
-                                sightingCount: sightingCount
-                            }
-                            myDataByYear.push(yearObject);
                         }
                     })
+                    //put that into an object and that object into an array
+                    var yearObject = {
+                        year: year,
+                        sightingCount: sightingCount
+                        }
+                    myDataByYear.push(yearObject);
                 }
+                //show the complete array of data by year
                 console.log(myDataByYear);
                 
             //Put the occurrences into a bar chart - make each bar clickable to toggle the year
