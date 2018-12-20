@@ -162,13 +162,13 @@
                 .style({'fill': '#3c763d', 'stroke': '#d6e9c6', 'stroke-width': '5'})
                 .attr('width', barWidth)
                 .attr('height', function (data) {
-                    return data;
+                    return data.sightingCount;
                 })
                 .attr('x', function (data, i) {
                     return i * (barWidth + barOffset);
                 })
                 .attr('y', function (data) {
-                    return height - data;
+                    return height - data.sightingCount;
                 });
 
             
