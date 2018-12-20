@@ -180,7 +180,7 @@
                     .enter().append("rect")
                       .attr("class", "bar")
                       .attr("x", function(d) { return x(d.year); })
-                      .attr("width", 0.5(900/myDataByYear.length))
+                      .attr("width", 0.5*900/myDataByYear.length)
                       .attr("y", function(d) { return d.sightingCount; })
                       .attr("height", function(d) { return height - d.sightingCount; });
 
