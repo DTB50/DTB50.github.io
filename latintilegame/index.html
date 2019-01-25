@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="jqueryUI/jquery-ui.js"></script>
+<script src="jqueryUI/jquery.ui.touch-punch.js"></script>
+<script src="XIII.js"></script>
+<!-- <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="jqueryUI/jquery-ui-theme.css"> -->
+<link rel="stylesheet" href="cardGame.css">
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="cardgame11b.js"></script>
+
+
+</head>
+<body>
+
+  <!-- sound sourced from freesound.org user radian under creative commons license at https://freesound.org/people/radian/sounds/62977/ -->
+  <audio id="chime">
+    <source src="sounds/62977__radian__chime-0002.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- sound sourced from freesound.org user TheDweebMan under creative commons license at https://freesound.org/people/TheDweebMan/sounds/278164/  -->
+  <audio id="mistakeSound">
+    <source src="sounds/278164__thedweebman__8-bit-wrong-2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- sound sourced from freesound.org user klavo1985 under creative commons license at https://freesound.org/people/klavo1985/sounds/396043/  -->
+  <audio id="winMusic">
+    <source src="sounds/396043__klavo1985__ancient-addventure-music-by-kris-klavenes.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- sound sourced from freesound.org user Dominictreis under creative commons license at https://freesound.org/people/dominictreis/sounds/362281/  -->
+  <audio id="loseMusic">
+    <source src="sounds/362281__dominictreis__scene-change-music-sad.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <div id="header">
+    <div id="title">Latin Synonym Trainer</div>
+    </div>
+    
+  <table id="gameTable">
+  <tr id="frame">
+    <td>
+    <img class="column" src="imgs/column.png" />
+    </td>
+    <td>
+    <div id="content"></div>
+    <div id="taskBar" class="taskBar"></div>
+    <div id="statusData">
+      <div id="livesText">Vitae:</div>
+      <div id="livesBox"></div>
+      <div id="timeText">Tempus:</div>
+      <div id="stageText">Planum: </div>
+      <div id="scoreText">Puncta: </div>
+    </div>
+      </td>
+
+      <td>
+      <img class="column" src="imgs/column.png" />
+    </td>
+  </tr>
+</table>
+    
+<p style="font-size:12px">
+  Game made by David Burns (david.burns.dtb@googlemail.com). <br>
+  Chime sound effect by freesound.org user Radian, sourced (unaltered) under creative commons Attribution license from https://freesound.org/people/radian/sounds/62977/ <br>
+  Stage 2 background photo by Encyclopedia Libre user Rafaelji, sourced (unaltered)  from wikimedia commons under Creative Commons Attribution-Share Alike 3.0 Unported license at https://commons.wikimedia.org/wiki/File:Mosaico_Pez_Casa_Anfiteatro_M%C3%A9rida.jpg <br>
+  Stage 3 background photo by wikimedia user AlMare, sourced (unaltered) from wikimedia commons under Free Art license at https://commons.wikimedia.org/wiki/File:Mosaico_Pez_Casa_Anfiteatro_M%C3%A9rida.jpg <br>
+  Stage 4 background photo by Andrew Dunn, sourced (unaltered) from wikimedia commons under Creative Commons Attribution-Share Alike 2.0 Generic license at https://commons.wikimedia.org/wiki/File:Roman_Baths,_Bath_-_Sea_Horse_Mosaic.jpg <br>
+  Stage 5 background photo by wikimedia user Wknight94, sourced (unaltered)  from wikimedia commons under Creative Commons Attribution-Share Alike 3.0 Unported license at https://commons.wikimedia.org/wiki/Category:Ktisis#/media/File:House_of_Eustolios_mosaic_closeup_2_altered.jpg <br>
+  Stage 6 background photo by Carole Raddato, sourced (unaltered) from wikimedia commons under Creative Commons Attribution-Share Alike 2.0 Generic license at https://commons.wikimedia.org/wiki/File:Nilotic_mosaic,_late_2nd_century_AD,_from_Italy,_National_Archaeological_Museum_of_Spain,_Madrid_(15456937622).jpg <br>
+  Stage 7 background photo by Jose Antonio Bielsa, sourced (unaltered) from sourced from wikimedia commons under Creative Commons Attribution-Share Alike 4.0 license at https://commons.wikimedia.org/wiki/File:Camino_de_Albalate_(i)._Mosaico;_Detalle_(7)_-_Foto_Jos%C3%A9_Antonio_Bielsa.JPG<br>
+  Other images are in public domain.
+</p>
+
+</body>
+</html>

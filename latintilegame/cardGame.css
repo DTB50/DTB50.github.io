@@ -1,0 +1,584 @@
+
+
+body {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    overflow-wrap: break-word;
+}
+
+#gameTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* UI and player information */
+
+#header {
+  min-height: 20px;
+  margin: auto;
+  padding: 10px;
+  background-color: lightblue;
+  text-align: left;
+  font-weight: bold;
+}
+
+#title {
+    text-align: center;
+}
+
+#userPanel {
+  max-width: 300px;
+  padding: 10px;
+  background-color: lightgrey;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+#userLogin {
+  margin-top: 5px;
+}
+
+#showRank {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+#levelUpDisplay{
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+  justify: center;
+}
+
+#expDisplay {
+  background-color: #ba1200;
+  color: gold;
+  width: 200px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  font-weight: bold;
+}
+
+.userUiText {
+  max-width: 200px;
+  float: left;
+}
+
+.userUiImg {
+  height: 40px;
+  width: 40px;
+  float: right;
+  border: 1px solid black;
+}
+
+#loginStatusDisplay {
+
+}
+
+#loginInfo {
+
+}
+
+#userImage {
+  height: 40px;
+  width: 40px;
+  float:right;
+}
+
+#frame {
+
+}
+
+
+.padding{
+  height: 100px;
+  background: url("imgs/transparent.png");
+  background-size: contain;
+}
+
+.halfPadding{
+  height: 50px;
+  background: url("imgs/transparent.png");
+  background-size: contain;
+}
+
+.taskBar {
+  width: 490px;
+  min-height: 30px;
+  margin: auto;
+  padding-top: 5px;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+}
+
+/* Game screen element classes */
+
+.gameTitleBox {
+  background-color: #ba1200;
+  color: gold;
+  width: 200px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  font-weight: bold;
+}
+
+/* outer grid */
+.grid {
+  float: left;
+  width: 110px;
+  height: 110px;
+  background-image: url("imgs/transparent.png");
+}
+
+.halfheight {
+  float: left;
+  width: 110px;
+  height: 55px;
+  background-image: url("imgs/transparent.png");
+}
+
+.halfRow{
+  float: left;
+  width: 110px;
+  background-image: url("imgs/transparent.png");
+}
+
+#content{
+    min-height: 470px;
+    width: 470px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+}
+/* Game UI elements */
+#statusData{
+    width: 470px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#livesText{
+    width: 50px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#livesBox{
+    width: 150px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+.heartBox {
+    width: 25px;
+    height: 25px;
+    float: left;
+    padding: 5px;
+}
+
+.heart {
+  width: 100%;
+  height: 100%;
+}
+
+#timeText{
+    width: 150px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#timer{
+    width: 10px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#stageText{
+    width: 220px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+
+#scoreText{
+    width: 180px;
+    height: 40px;
+    float: left;
+    padding: 10px;
+    /* border: 1px solid black;
+    background-color: white; */
+}
+/* inner grid elements */
+
+
+.headerText {
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    font-weight: bold;
+}
+
+.introText {
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.titles {
+  width: 100px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: #79fc8f;
+  font-weight: bold;
+}
+
+.startButton {
+  width: 100px;
+  height: 100px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background: grey;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 100px;
+}
+/* draggable elements */
+.makeMeDraggable {
+  display: table;
+  width: 100px;
+  height: 100px;
+  /* background: #b3b3b3; */
+  background-image: url("imgs/800px-Marble_blocks_pattern_texture.jpg");
+  background-size: contain;
+  border-top: 3px solid #d9d9d9;
+  border-left: 3px solid #d9d9d9;
+  border-bottom: 3px solid #404040;
+  border-right: 3px solid #404040;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  /* vertical-align: middle;
+  line-height: 100px; */
+  border-radius: 3px;
+}
+
+.makeMeDraggable-hover {
+  width: 100px;
+  height: 100px;
+  background: #80dfff;
+  border-top: 3px solid #d9d9d9;
+  border-left: 3px solid #d9d9d9;
+  border-bottom: 3px solid #404040;
+  border-right: 3px solid #404040;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  /* vertical-align: middle;
+  line-height: 100px; */
+  border-radius: 3px;
+}
+
+/* Centres text in cells - uses CSS styling from stackoverflow user Jason Gennaro in response to stackoverflow user Jose Faeti's query located  at https://stackoverflow.com/questions/7453868/how-can-i-make-my-text-appear-in-the-center-of-this-div-both-vetically-and-horiz */
+.centredText {
+  max-width: 100px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+.makeMeDraggable.ui-draggable-dragging {
+  /* border: 3px solid black; */
+  background: #80dfff;
+}
+/* droppable elements */
+.makeMeDroppable {
+  display: table;
+  width: 100px;
+  height: 100px;
+  border-top: 3px solid #ffb366;
+  border-left: 3px solid #ffb366;
+  border-bottom: 3px solid #663300;
+  border-right: 3px solid #663300;
+  background-color: #e67300;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  /* line-height: 100px; */
+  border-radius: 3px;
+}
+
+
+
+/* feedback elements */
+#feedbackBox {
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+
+.resultBox{
+  /* height: 30px;
+  line-height: 30px; */
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: white;
+}
+
+.feedbackRight {
+  width: 100px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border-top: 3px solid lightgrey;
+  border-left: 3px solid lightgrey;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  background-color: #79fc8f;
+}
+
+.feedbackLeftHidden {
+  width: 100px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+
+.feedbackWrong {
+  width: 100px;
+  height: 50;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #f46e6e;
+}
+
+
+#rightHeadRow{
+    height: 50;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: green;
+}
+
+.rightHeadCell{
+    height: 50;
+    width: 200;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: green;
+}
+
+#wrongHeadRow{
+    height: 50;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: red;
+}
+
+#timeUpHeadRow{
+    height: 50;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: red;
+}
+
+#alertBox {
+
+}
+
+/* Images for backgrounds */
+
+.titleScreen {
+  background-image: url("imgs/Library_books.jpg");
+  background-size: contain;
+}
+
+.noBG {
+  background-image: none;
+}
+
+.lvl1BG {
+/* Image in public domain: https://commons.wikimedia.org/wiki/File:Anaximander_Mosaic_(cropped,_with_sundial).jpg*/
+  background-image: url("imgs/Anaximander_Mosaic.jpg");
+  background-size: contain;
+}
+
+.lvl2BG {
+ /* Image by wikimedia user Rafaelji, sourced from wikimedia commons under Creative Commons Attribution-Share Alike 3.0 Unported license at https://commons.wikimedia.org/wiki/File:Mosaico_Pez_Casa_Anfiteatro_M%C3%A9rida.jpg */
+  background-image: url("imgs/Mosaico_Pez_Casa_Anfiteatro_Merida.jpg");
+  background-size: contain;
+}
+
+.lvl3BG {
+/* Image by wikimedia user AlMare, sourced from wikimedia commons under Free Art license at https://commons.wikimedia.org/wiki/File:Mosaico_Pez_Casa_Anfiteatro_M%C3%A9rida.jpg */
+  background-image: url("imgs/Bignor_Villa_Mosaic_Medusa_retouched.jpg");
+  background-size: contain;
+}
+
+.lvl4BG {
+/* Image by Andrew Dunn, sourced from wikimedia commons under Creative Commons Attribution-share alike 2.0 Generic license at hhttps://commons.wikimedia.org/wiki/File:Roman_Baths,_Bath_-_Sea_Horse_Mosaic.jpg */
+  background-image: url("imgs/1280px-Roman_Baths,_Bath_-_Sea_Horse_Mosaic.jpg");
+  background-size: contain;
+}
+
+  /* Image by wikimedia user Wknight94, sourced from wikimedia commons under Creative Commons Attribution-Share Alike 2.0 Generic at https://commons.wikimedia.org/wiki/Category:Ktisis#/media/File:House_of_Eustolios_mosaic_closeup_2_altered.jpg*/
+.lvl5BG {
+  background-image: url("imgs/House_of_Eustolios_mosaic_closeup_2_altered.jpg");
+  background-size: contain;
+}
+
+.lvl6BG {
+     /* Image by Carole Raddato, sourced from wikimedia commons under Creative Commons Attribution-Share Alike 2.0 Generic license at https://commons.wikimedia.org/wiki/File:Nilotic_mosaic,_late_2nd_century_AD,_from_Italy,_National_Archaeological_Museum_of_Spain,_Madrid_(15456937622).jpg*/
+  background-image: url("imgs/Nilotic_mosaic_late_2nd_century_AD_from_Italy_National_Archaeological_Museum_of_Spain_Madrid_(15456937622).jpg");
+  background-size: contain;
+}
+
+  /* Image by Jose Antonio Bielsa, sourced from wikimedia commons under creative commons license at https://commons.wikimedia.org/wiki/File:Camino_de_Albalate_(i)._Mosaico;_Detalle_(7)_-_Foto_Jos%C3%A9_Antonio_Bielsa.JPG*/
+.lvl7BG {
+  background-image: url("imgs/Camino_de_Albalate_Mosaico_-_Foto_Jose_Antonio_Bielsa.jpg");
+  background-size: contain;
+}
+
+  /* Image in public domain, sourced from wikimedia commons at https://commons.wikimedia.org/wiki/Category:Lion_and_leopard,_mosaic_(from_Pompeii)#/media/File:Lions_mosaic_MAN_Naples_Inv_114282_photo2.jpg */
+.lvl8BG {
+  background-image: url("imgs/Lions_mosaic_MAN_Naples_Inv_114282_photo2.jpg");
+  background-size: contain;
+}
+
+/* Image in public domain, sourced from wikimedia commons under creative commons license at https://commons.wikimedia.org/wiki/Category:Poseidon_and_Amphitrite_on_the_wedding_chariot,_mosaic_(from_Pompeii)#/media/File:MANNapoli_10007_Mosaic_Poseidon_%26_Amphitrite_Pompeii.jpg*/
+.lvl9BG {
+  background-image: url("imgs/MANNapoli_10007_Mosaic_Poseidon_&_Amphitrite_Pompeii.jpg");
+  background-size: contain;
+}
+
+/* Image in public domain, sourced from wikimedia commons under public domain at https://commons.wikimedia.org/wiki/Category:Wild_animals_in_ancient_Roman_mosaics#/media/File:Bardo_Diane_chasseresse.jpg */
+.lvl10BG {
+  background-image: url("imgs/1024px-Bardo_Diane_chasseresse.jpg");
+  background-size: contain;
+}
+
+
+/* Images for user level avatars */
+
+.userlvl1 {
+background-image: url("imgs/servus.png");
+background-size: contain;
+}
+
+.userlvl2 {
+background-image: url("imgs/plebian.png");
+background-size: contain;
+}
+
+.userlvl3 {
+background-image: url("imgs/equites.png");
+background-size: contain;
+}
+
+.userlvl4 {
+background-image: url("imgs/senator.png");
+background-size: contain;
+}
+
+.userlvl5 {
+background-image: url("imgs/patrician.png");
+background-size: contain;
+}
+
+.userlvl6 {
+background-image: url("imgs/emperor.png");
+background-size: contain;
+}
+
+.userlvl7 {
+background-image: url("imgs/deus.png");
+background-size: contain;
+}
+
+.userlvl8 {
+background-image: url("");
+background-size: contain;
+}
+
+.userlvl9 {
+background-image: url("");
+background-size: contain;
+}
+
+.userlvl10 {
+background-image: url("");
+background-size: contain;
+}
