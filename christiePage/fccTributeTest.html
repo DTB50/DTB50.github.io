@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <!-- ==== ASSETS ==== -->
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: 'Poiret One', cursive;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+
+        /* ==== NAVIGATION BAR ==== */
+
+        .navbar{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 7vh;
+            display: flex;
+            flex-direction: row;
+            background-color: darkslategray;
+            color: white;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        /* MAIN CSS GRID */
+
+        #main {
+            width: 100%;
+        }
+
+        .grid-container {
+            position: absolute;
+            top: 7vh;
+            display: grid;
+            grid-template-columns: 15vh 70vh 15vh;
+            width: 100%;
+            min-height: auto;
+        }
+
+        .pageContent {
+            position: relative;
+            top: 7vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            border: 3px solid antiquewhite;
+/*            padding: 4vw;*/
+            width: 70vw;
+            margin-left: auto;
+            margin-right: auto;
+            contain: content;
+        }
+
+
+        #headAndTitle {
+            display: flex;
+            flex-direction: row;
+            border: 3px solid antiquewhite;
+            width: 90%;
+/*            min-width: 400px;*/
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: 3vh;
+            height: 15vw;
+            max-height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        /* ==== ART DECO DISPLAY GRAPHICS ==== */
+
+        .decoItem1 {
+            display: flex;
+            position: absolute;
+            left: 0vw;
+            top: 0vh;
+/*            border: 1px solid yellow;*/
+            height: 100%;
+            width: 15vw;
+            max-height: 100px;
+            max-width: 100px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .decoItem2 {
+            display: flex;
+            position: absolute;
+            right: 0vw;
+            top: 0vh;
+/*            border: 1px solid yellow;*/
+            height: 100%;
+            width: 15vw;
+            max-height: 100px;
+            max-width: 100px;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            align-self: center;
+        }
+
+/*        These items are positioned relative to their container - decoItem*/
+
+        .decoCircle {
+            height: 60%;
+            width: 60%;
+            border-radius: 50%;
+            border: 3px solid lightyellow;
+            color: transparent;
+            z-index: 0;
+            position: absolute;
+        }
+
+        .decoCircleBig {
+            height: 90%;
+            width: 90%;
+            border-radius: 50%;
+            border: 3px solid white;
+            color: transparent;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .decoSquare {
+            height: 60%;
+            width: 60%;
+            border: 3px solid #d6c19e;
+            position: absolute;
+            color: transparent;
+            z-index: -1;
+        }
+
+        .decoDiamond {
+            height: 60%;
+            width: 60%;
+            border: 3px solid #c9b595;
+            position: absolute;
+            transform: rotate(45deg);
+            color: transparent;
+            z-index: -2;
+        }
+
+        /* ==== MAIN IMAGE ==== */
+
+        #img-div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            height: auto;
+        }
+
+        .responsiveImage {
+            position: relative;
+            width: 90%;
+            max-width: 300px;
+            height: auto;
+            margin-top: 5%;
+            margin-bottom: 2%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #img-caption {
+            position: relative;
+        }
+
+        /* ==== OTHER IMAGES ==== */
+
+
+
+        /* ==== TEXT SECTION STYLING ==== */
+
+        .blackBG{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+            padding-left: 0%;
+            padding-right: 0%;
+            color: lightgray;
+        }
+
+        .blackBG p{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            color: lightgrey;
+        }
+
+        .blackBG ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        h3{
+            width: 90%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h4{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .creamBG{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+            padding-left: 0%;
+            padding-right: 0%;
+            background-color: antiquewhite;
+            color: black;
+        }
+
+
+        .creamBG p{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .creamBG h3{
+            width: 90%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .headingText {
+            position: relative;
+            top: 2%;
+        }
+
+
+        /* ==== NAVIGATION LINKS ==== */
+
+        .anchor {
+            position: relative;
+            height: 2px;
+            width: 2px;
+            background-color: transparent;
+            bottom: 6vh;
+        }
+
+        /* ========== PHONE SCREEN CSS ============== */
+
+        @media (max-width: 685px) {
+
+            .grid-container {
+                position: relative;
+                top: 0vh;
+                display: grid;
+                grid-template-columns: 0% 100% 0%;
+                width: 100%;
+                min-height: auto;
+            }
+
+            .pageContent {
+                left: 0vh;
+                display: flex;
+                position: absolute;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                grid-column-start: 1;
+                grid-column-end: 4;
+                border: none;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                contain: text;
+            }
+
+            /*        For display graphics*/
+
+        .decoItem1 {
+            display: flex;
+            position: absolute;
+            left: 0vw;
+            top: 0vh;
+/*            border: 1px solid yellow;*/
+            height: 100%;
+            width: 15vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .decoItem2 {
+            display: flex;
+            position: absolute;
+            right: 0vw;
+            top: 0vh;
+/*            border: 1px solid yellow;*/
+            height: 100%;
+            width: 15vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==== REMOVE ART DECO VISUALS AT PHONE SCREEN SIZE ==== */
+
+        .decoCircle {
+            display: none;
+        }
+
+        .decoCircleBig {
+            display: none;
+        }
+
+        .decoSquare {
+            display: none;
+        }
+
+        .decoDiamond {
+            display: none;
+        }
+
+        #headAndTitle {
+            display: flex;
+            flex-direction: row;
+            border: none;
+            width: 100vw;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            top: 3vh;
+            height: 15vh;
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 100%;;
+        }
+
+        /* ==== IMAGES ==== */
+
+        #img-div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            height: auto;
+        }
+
+        .responsiveImage {
+            position: relative;
+            width: 50%;
+            max-width: 720px;
+            height: auto;
+            margin-top: 5%;
+            margin-bottom: 2%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== TEXT SECTIONS ==== */
+
+        .blackBG{
+            width: 100%;
+        }
+
+
+        .creamBG {
+            width: 100%;
+        }
+
+        .buffer1 {
+            display: none;
+            flex-direction: row;
+            background-color: #1a1a1a;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            min-width: 10%;
+            max-width: 10%;
+        }
+
+        .buffer2 {
+            display: none;
+            flex-direction: row;
+            background-color: #1a1a1a;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            min-width: 10%;
+            max-width: 10%;
+        }
+
+    /* ==== SIDE-SCROLLING CONTENT FOR MOBILE ==== */
+
+    /* ==== Scrolling wrapper code sourced from: https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6 ==== */
+    .scrolling-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin-left: 2vh;
+        margin-right: 2vh;
+        height: auto;
+    }
+
+    .characterProfile {
+        flex: 0 0 auto;
+        width: 30vh;
+        height: auto;
+        background-color: #1a1a1a;
+        color: antiquewhite;
+        word-wrap: normal;
+        flex-wrap: wrap;
+        margin-left: 3vw;
+      }
+
+    .characterProfile p {
+        color: antiquewhite;
+    }
+
+    #herCharacters {
+        padding-bottom: 3vh;
+    }
+
+      .bookDiv {
+        flex: 0 0 auto;
+        width: 30vh;
+        height: 40vh;
+        background-color: antiquewhite;
+        color: black;
+        word-wrap: normal;
+        flex-wrap: wrap;
+        margin-left: 3vw;
+      }
+
+
+    .bookDiv h4 {
+        width: 90%
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bookDiv p {
+        color: black;
+    }
+
+    .bookDiv p {
+        width: 90%
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #herBooks {
+        padding-bottom: 3vh;
+    }
+
+}
+
+    </style>
+
+    </head>
+
+<body>
+    <div id="main">
+
+    <div class="navbar">
+            <a href="#topAnchor">Home</a>
+            <a href="#herLifeAnchor">Her life</a>
+            <a href="#herCharactersAnchor">Her characters</a>
+            <a href="#herBooksAnchor">Her books</a>
+            <a href="#moreInfoAnchor">Links</a>
+    </div>
+
+<!--    <div class="grid-container">-->
+        <div class="pageContent">
+
+            <!-- ==== HEADER CONTENT ==== -->
+            <div id="topAnchor" class="anchor"></div>
+
+            <div id="headAndTitle">
+                <div class="decoItem1">
+                    <div class="decoCircle"></div>
+                    <div class="decoSquare"></div>
+                    <div class="decoDiamond"></div>
+                    <div class="decoCircleBig"></div>
+                </div>
+
+                <h1 id="title">Agatha Christie</h1>
+                <p></p>
+
+                <div class="decoItem2">
+                    <div class="decoCircle"></div>
+                    <div class="decoSquare"></div>
+                    <div class="decoDiamond"></div>
+                    <div class="decoCircleBig"></div>
+                </div>
+            </div>
+
+<!--            <p class="headingText">A tribute page</p>-->
+
+            <div id="img-div">
+                <img id="image" src="https://i.imgur.com/G91dHi2.jpg" title="source: imgur.com" class="responsiveImage" alt="Photograph of Dame Agatha Christie"/>
+                <p id="img-caption">Dame Agatha Christie in later life.</p>
+            </div>
+
+            <!-- ==== HER LIFE ==== -->
+            <div id="herLifeAnchor" class="anchor"></div>
+
+                <div id="herLife" class="blackBG">
+                    <h3>Her Life</h3>
+                    <p>A few interesting facts about Agatha Christie:</p>
+                    <ul>
+                        <li>
+                        Dame Agatha Mary Clarissa Christie (1890-1976) is listed by Guinness World Records as the best-selling novelist of all time, selling around 2 billion books.
+                        </li>
+                        <li>
+                        In 1926, Christie was the subject of her own mystery, having disappeared under suspicious circumstances and leaving her husband Archie Christie the prime suspect of her "murder". Many regarded this as a publicity stunt for her newest book: The Murder of Roger Akroyd, and the event even became the inspiration for a movie and an episode of Doctor Who.
+                        </li>
+                        <li>
+                        Christie was an avid traveller, and met her second husband Max on a trip to Baghdad when he -an archaeologist- was giving a tour of his dig site. Her travels would inspire a number of her books and stories, including Murder on the Orient Express and Death on the Nile.
+                        </li>
+                        <li>
+                        Christie served in a pharmacy during World War 2, giving her a useful knowledge of chemicals and poisons.
+                        <li>
+                        Christie also wrote six romance novels under the pseudonym of Mary Westmacott.
+                        </li>
+                    </ul>
+                </div>
+
+            <!-- ==== HER CHARACTERS ==== -->
+            <div id="herCharactersAnchor" class="anchor"></div>
+
+                <div id="herCharacters" class="creamBG">
+                    <h3>Her Characters</h3>
+                    <p> Agatha Christie created a number of the most iconic characters in detective fiction.</p>
+                    <div class="scrolling-wrapper">
+                        <div class="characterProfile">
+                            <img url="">
+                            <div class="characterProfileText">
+                            <h4>Hercule Poirot</h4>
+                            <p>This Belgian detective's peculiar behaviour and iconic moustache have made him one of the most well-known characters in all of crime fiction, starring in 33 novels, one play and more than 50 short stories. He was most famously portrayed by David Suchet, but more recently Sir Kenneth Branagh and John Malkovich.</p>
+                            </div>
+                        </div>
+                        <div class="characterProfile">
+                            <h4>Miss Marple</h4>
+                            <p>Another of Christie's most beloved characters, Jane Marple solved crimes using intuition gained from years of paying close attention to her small-town neighbours, and starred in 12 novels and 20 short stories.</p>
+                        </div>
+                        <div class="characterProfile">
+                            <h4>Tommy and Tuppence</h4>
+                            <p>Two of Christie's lesser-known creations, these younger protagonists could get into -and more importantly out of- action-packed situations that would not fit with the largely more sedate pace of Poirot and Marple's cases. In 2015 two of their novels were adapted by the BBC, starring David Walliams and Jessica Reine.</p>
+                        </div>
+                    </div>
+
+                <!-- ==== HER BOOKS ==== -->
+                <div id="herBooksAnchor" class="anchor"></div>
+
+                </div>
+                <div id="herBooks" class="blackBG">
+                    <h3>Her Books</h3>
+                    <p> Throughout her career, Christie wrote too many novels and short stories to list here! The following are just a few of her most famous works.</p>
+
+                <div class="scrolling-wrapper">
+                    <div class="bookDiv">
+                        <h4>The Mysterious Affair At Styles</h4>
+                        <p>Christie's first published novel introduced both herself and Hercule Poirot to the world.</p>
+                    </div>
+                    <div class="bookDiv">
+                        <h4>The Murder of Roger Akroyd</h4>
+                        <p>The third Poirot novel has been regarded as one of the most influential crime novels ever written due to its surprising solution.</p>
+                    </div>
+                    <div class="bookDiv">
+                        <h4>Murder on the Orient Express</h4>
+                        <p>Most recently adapted as a film starring Sir Kenneth Branagh in 2017.</p>
+                    </div>
+                    <div class="bookDiv">
+                        <h4>And Then There Were None</h4>
+                        <p>This chilling tale of a dwindling group of strangers trapped on an isolated island is Christie's best-selling novel, having sold over 100 million copies!</p>
+                    </div>
+                    <div class="bookDiv">
+                        <h4>Curtain</h4>
+                        <p>The final Poirot novel was written during World War 2 and sealed in a bank vault until Christie chose to release it near the end of her own life.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ==== MORE INFO ==== -->
+            <div id="moreInfoAnchor" class="anchor"></div>
+
+                <div id="moreInfo" class="creamBG">
+                    <h3>Further information</h3>
+                    <p>For more information on Agatha Christie, please take a look at her <a href="https://en.wikipedia.org/wiki/Agatha_Christie" id="tribute-link" target="_blank">Wikipedia page</a>, or read the excellent graphic novel biography <a href="https://www.amazon.co.uk/Agatha-Real-Life-Christie/dp/1910593117" target="_blank">Agatha: The Real Life of Agatha Christie</a>.</p>
+                </div>
+
+            </div>
+    </div>
+</div>
+</body>
+</html>

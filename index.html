@@ -11,61 +11,71 @@
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <style type="text/css">
-        
-        
+
+
         .fakeimg {
             height: 200px;
             background-color: #aaa;
             border: none;
-          }  
+          }
 
             .imgfit{
                 max-height: 200px;
             }
 
-        .navbar .navbar-nav li a:hover{color: #aad9f7 !important;} 
+        .navbar .navbar-nav li a:hover{color: #aad9f7 !important;}
 
-         .card .card-header a{color: black !important;} 
-         .card .card-header a:hover{font-weight: bold !important;} 
-         .card .card-header{background-color: #aad9f7 !important;} 
-         .card .card-body{border: 1px solid light-grey !important; border-radius: 3px !important}       
+         .card .card-header a{color: black !important;}
+         .card .card-header a:hover{font-weight: bold !important;}
+         .card .card-header{background-color: #aad9f7 !important;}
+         .card .card-body{border: 1px solid light-grey !important; border-radius: 3px !important}
 
          h2 { padding-top: 60px;}
 
         .projectLink {
             color: black !important;
-            text-decoration: none; 
+            text-decoration: none;
         }
 
         .projectLink:hover{
             color: #aad9f7 !important;
             margin: auto;
         }
-        
+
         .projectBox {
             background-color: #efefef;
             border-radius: 15px;
             border: 10px solid white;
             padding: 5px;
         }
-        
+
         .projectImg:hover{
             border: 4px solid #aad9f7;
             margin: auto;
         }
-     
+
         .headerText{
             margin-bottom: 0.5em;
         }
-        
+
         .employmentText{
             margin-bottom: 0;
         }
-        
+
         .buffer {
             margin-bottom: 0.5em;
         }
-        
+
+        .scrolling-wrapper {
+          overflow-x: scroll;
+          overflow-y: hidden;
+          white-space: nowrap;
+
+          .card {
+            display: inline-block;
+          }
+        }
+
     @media (max-width: 767px) {
         #top {
             height: 30px;
@@ -79,7 +89,7 @@
 <body>
 
 <!-- NAVIGATION BAR -->
-    
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <a class="navbar-brand" href="#top"><i class="fas fa-home"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -95,19 +105,19 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#projects">Front-End Projects</a>
-      </li>  
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="#fsApps">Full-Stack Projects</a>
-      </li> 
+      </li>
     <li class="nav-item">
         <a class="nav-link" href="#fsCodeSamples">Full-Stack Code Samples</a>
-      </li> 
+      </li>
     </ul>
-  </div>  
+  </div>
 </nav>
-    
+
 <div id="top"></div>
-    
+
 <div class="jumbotron text-center" style="padding-bottom: 1em; margin-bottom: 0px;">
   <h1>David Burns</h1>
     <h3>Computing and IT graduate and keen programmer</h3>
@@ -118,7 +128,7 @@
 </div>
 
 
-    
+
 <!-- ABOUT ME -->
 
 <div class="container">
@@ -135,41 +145,41 @@
             </p>
         </div>
     </div>
-     
+
 
 <!-- CURRICULUM VITAE -->
-      
+
 <div class="row" id="cv">
     <div class="col-12">
         <h2>Curriculum Vitae</h2>
     </div>
-    
+
     <div class="container">
       <div id="accordion">
-          
+
         <div class="card">
           <div class="card-header">
             <a class="card-link" data-toggle="collapse" href="#collapseSkills">
-            <i class="fas fa-wrench"></i>  
+            <i class="fas fa-wrench"></i>
             Skills
             </a>
           </div>
           <div id="collapseSkills" class="collapse" data-parent="#accordion">
             <div class="card-body">
               <ul>
-                  <li><b>Front-end web development</b> 
+                  <li><b>Front-end web development</b>
                       <p> Capable of developing and testing valid and accessible responsive websites with Foundation or pure HTML5/CSS3. Prior to my current degree, I built Sharepoint sites and created effective content structures for Bank of England web and intranet pages.</p>
                   </li>
-                  <li><b>Web application development</b> 
+                  <li><b>Web application development</b>
                       <p>During my degree I have gained experience developing single-page web applications using Javascript/jQuery and Express.js/Node.js (both individually and collaboratively) and using Git for project workflow management. Projects created for this course included a quiz game, a multiplayer checkers game, two games for Latin language learning, a Twitter-style messaging web application, and a forum incorporating a database backend and the use of a number of APIs for local weather, mapping, and news.</p>
                   </li>
-                  <li><b>Database maintenance and data analysis/manipulation</b> 
+                  <li><b>Database maintenance and data analysis/manipulation</b>
                       <p>Experience of designing, building and querying relational databases using MySQL, as well as visually representing spreadsheet data using the d3.js and c3.js libraries.</p>
                   </li>
-                    <li><b>Drafting effective communications</b> 
+                    <li><b>Drafting effective communications</b>
                     <p>Significant experience of developing clear and concise written outputs for communication by web, print and presentation to internal (working level and senior) and external (public and industry) stakeholders of the Bank of England. This entailed summarising complex technical and legal subjects in an accessible yet legally sound style.</p>
                   </li>
-                    <li><b>Stakeholder management and teamworking</b> 
+                    <li><b>Stakeholder management and teamworking</b>
                         <p>Experience with coordinating projects (e.g. policy development, policy consultations and communication outputs) that required input from a wide range of internal and external stakeholders including technical and legal staff, senior committees, and members of the financial services industry and public.</p>
                   </li>
                 </ul>
@@ -180,7 +190,7 @@
         <div class="card">
           <div class="card-header">
             <a class="collapsed card-link" data-toggle="collapse" href="#collapseEducation">
-            <i class="fas fa-graduation-cap"></i> 
+            <i class="fas fa-graduation-cap"></i>
             Education
             </a>
           </div>
@@ -190,22 +200,25 @@
                   <li>
                     <b>University of St Andrews (September 2017 - August 2018) – MSc Computing and Information Technology - Distinction</b>
                     <ul>
-                    <li><b>Web technologies:</b> 
+                    <li><b>Web technologies:</b>
                         <p>Provided practical static and responsive website development experience, including testing for user experience, accessibility, browser compatibility and HTML/CSS validation.</p>
                         </li>
                     <li><b>Programming Principles and Practice & Masters Programming Projects:</b>
                         <p>Two modules providing experience programming and testing single-page web applications, both independently and collaboratively, using Javascript, jQuery, Express.js, Node.js and other external libraries and APIs. Key outcomes included developing a quiz game, a messaging application, a multiplayer checkers game and a forum for local towns with API integration for weather, location mapping and news.</p>
                         </li>
-                    <li><b>Database Management Systems:</b> 
+                    <li><b>Database Management Systems:</b>
                         <p>Provided experience of relational database design, development and querying via mySQL.</p>
                         </li>
-                    <li><b>Information Security Management: </b> 
+                     <li><b>Data Visualisation:</b>
+                        <p>Provided experience of designing and developing interactive visualisations of datasets using Tableau and the D3.js Javascript library.</p>
+                        </li>
+                    <li><b>Information Security Management: </b>
                         <p>Studied key data protection concepts, principles and practices including threat assessment, authentication, cryptography, network protection, penetration testing and information gathering (including port scanning), and key regulations and standards.</p>
                         </li>
-                    <li><b>Data Ethics and Privacy:</b> 
+                    <li><b>Data Ethics and Privacy:</b>
                         <p>Studied key issues and regulation relating to the ethical handling of data, latterly focusing on the DGPR (including conducting mock Data Protection Impact Assessments).</p>
                         </li>
-                    <li><b>Dissertation:</b> 
+                    <li><b>Dissertation:</b>
                         <p>Design and development of interactive Latin language learning games for the University of St Andrews School of Classics. These were single-page word matching game applications developed mainly using jQuery, one of which included a user account system underpinned by a Node.js/Express.js REST API and a CouchDB noSQL database.</p>
                         </li>
                       </ul>
@@ -213,10 +226,10 @@
                 <li>
                 <b>University of St. Andrews 2008/09 - MLitt International Business – Distinction</b>
                 <ul>
-                    <li><b>Dissertation:</b> 
+                    <li><b>Dissertation:</b>
                         <p>An examination into cross media marketing synergy between the videogame and music industries.</p>
                     </li>
-                    <li><b>Key courses:</b> 
+                    <li><b>Key courses:</b>
                         <p>Global Business Studies, International Marketing, E-business, Marketing and Society, Corporate Finance and Accounting in a Global Context, and Managing Human Resources.</p>
                     </li>
                 </ul>
@@ -224,7 +237,7 @@
                 <li>
                 <b>University of St. Andrews 2004- 2008 – MA (Hons) Economics & International Relations – 2:1</b>
                 <ul>
-                    <li><b>Key courses:</b> 
+                    <li><b>Key courses:</b>
                         <p>Advanced Macroeconomics, Advanced Microeconomics, Econometrics, International Security, The return of Great Power Politics, Economics of Social Life, and Ethics and World Politics.</p>
                     </li>
                 </ul>
@@ -276,10 +289,10 @@
                         </li>
                     </ul>
                   </li>
-                  <li class="buffer">      
+                  <li class="buffer">
                   <b>Promontory Financial Group - Analyst (Contract) (June 2010 - February 2011)</b>
                         <p class="employmentText">Supported consulting teams and senior staff of a financial services regulatory consultancy by:</p>
-                      <ul>  
+                      <ul>
                       <li>Contributing to reports and materials for public and private sector clients including Board effectiveness reviews and financial promotions workshops.</li>
                       </ul>
                  </li>
@@ -292,17 +305,17 @@
         <div class="card">
           <div class="card-header">
             <a class="collapsed card-link" data-toggle="collapse" href="#collapseOther">
-            <i class="far fa-smile"></i>  
+            <i class="far fa-smile"></i>
             Other
             </a>
           </div>
           <div id="collapseOther" class="collapse" data-parent="#accordion">
             <div class="card-body">
             <ul>
-              <li><b>Guitar:</b> 
+              <li><b>Guitar:</b>
                   <p>I am a keen guitarist, and prior to commencing my degree I spent a very rewarding month volunteering with <a href="https://www.facebook.com/theguitarsocialfoundation/">The Guitar Social Foundation</a>, which seeks to provide free music tuition to people affected by disabilities, mental health issues, or homelessness amongst other considerations.</p>
                 </li>
-            <li><b>Comedy:</b> 
+            <li><b>Comedy:</b>
                 <p>While at University I took the opportunity to get involved with the Comedy Society, contributing a number of articles to the satirical student news site Salvator News, as well as contributing material for live panel and sketch shows.</p>
                 </li>
             </ul>
@@ -312,29 +325,29 @@
 
       </div>
     </div>
-</div>   
-        
+</div>
+
       <hr class="d-sm-none">
     </div>
 </div>
-    
+
 </br>
-      
+
 <!-- FRONT END PROJECT SAMPLES -->
-    
+
 <div class="row" id="projects">
     <div class="col">
-        <h2>Front-end projects</h2>    
+        <h2>Front-end projects</h2>
         <p>The links below lead to a selection of projects developed as part of the MSc in Computing and IT.</p>
     </div>
 </div>
-<div class="row"> 
+<div class="row">
     <div class="col-sm-4 projectBox text-center">
         <a href="travelsite/travelsite.html" class="projectLink"><h3>Italia tours test webpage</h3></a>
         <a href="travelsite/travelsite.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/website.png"></a>
       <p>A sample website for a fictitious travel agency made using the Foundation framework. Demonstrates features such as the carousel, accordion, and sticky "Magellan" navigation element.</p>
     </div>
-    
+
     <div class="col-sm-4 projectBox text-center">
         <a href="vgsales/overviewbar.html" class="projectLink"><h3>Videogame sales charts</h3></a>
         <a href="vgsales/overviewbar.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/gamesales2.png"></a>
@@ -347,96 +360,104 @@
       <p>A quiz game made using jQuery and the Quizdb API.</p>
     </div>
   </div>
-<div class="row">    
+<div class="row">
     <div class="col-sm-4 projectBox text-center">
       <a href="musicDB/CS5002A3albums.html" class="projectLink"><h3>Album Data Table</h3></a>
         <a href="musicDB/CS5002A3albums.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/albums.png"></a>
       <p>A table of data about best-selling albums that can be filtered by single or multiple criteria.</p>
     </div>
-      
+
   <div class="col-sm-4 projectBox text-center">
       <a href="client-running-checkers-app/checkers.html" class="projectLink"><h3>Checkers game</h3></a>
       <a href="client-running-checkers-app/checkers.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/checkers.png"></a>
       <p>A simple local two-player Checkers game made using jQuery.</p>
     </div>
-    
+
   <div class="col-sm-4 projectBox text-center">
     <a href="latinboardgame/gridgame.html" class="projectLink"><h3>Latin synonym game A</h3></a>
       <a href="latinboardgame/gridgame.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/latinboardgame.png"></a>
       <p>Latin synonym-matching game developed as part of my dissertation, made using jQuery. Please view in Chrome or Safari.</p>
     </div>
   </div>
-    
+
 <div class="row">
       <div class="col-sm-4 projectBox text-center">
     <a href="latinboardgame/gridgame.html" class="projectLink"><h3>Latin synonym game B</h3></a>
       <a href="latintilegame/index.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/latintilegame.png"></a>
       <p>A second Latin synonym-matching game developed as part of my dissertation, made using jQuery. Code for a full-stack version of this project including a prototype user account database can be found below. Please view in Chrome or Safari.</p>
     </div>
-    
+
       <div class="col-sm-4 projectBox text-center">
     <a href="maps/maps.html" class="projectLink"><h3>UFO sighting map</h3></a>
       <a href="maps/maps.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/ufomap.png"></a>
       <p>A work-in-progress interactive map of UK-based UFO sightings using Leaflet.js and D3 to visualise a Kaggle dataset.</p>
     </div>
-    
+
     <div class="col-sm-4 projectBox text-center">
-      <h3>More to come...</h3>
-      <div class="img-responsive center-block img-thumbnail fakeimg imgfit"><i class="fas fa-ellipsis-h"></i></div>
-      <p>This page will be updated with further projects in time.</p>
-    </div>
+  <a href="christiePage/fccTributeTest.html" class="projectLink"><h3>Agatha Christie tribute page</h3></a>
+    <a href="christiePage/fccTributeTest.html"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/christiePage.png"></a>
+    <p>Inspired by the FreeCodeCamp tribute page challenge, this is a small responsive website with an art deco style made as an experiment with front-end design using pure HTML5 and CSS3, including CSS Grid and Flexbox. Resize the page to see decorative elements change and certain text elements move into to mobile-friendly horizontally scrolling containers.</p>
   </div>
-    
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4 projectBox text-center">
+        <h3>More to come...</h3>
+        <div class="img-responsive center-block img-thumbnail fakeimg imgfit"><i class="fas fa-ellipsis-h"></i></div>
+        <p>This page will be updated with further projects in time.</p>
+      </div>
+  </div>
+
 <!-- FULL STACK APPS -->
-    
+
 <div class="row"  id="fsApps">
     <div class="col">
-        <h2>Full-stack applications</h2>    
+        <h2>Full-stack applications</h2>
         <p>The links below lead to my currently hosted full stack applications.</p>
     </div>
     </div>
-<div class="row">    
+<div class="row">
     <div class="col-sm-4 projectBox text-center">
     <a href="http://dry-thicket-29493.herokuapp.com/" class="projectLink"><h3>UFO sighting map</h3></a>
       <a href="http://dry-thicket-29493.herokuapp.com/"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/ufomap.png"></a>
       <p>An enhanced version of the D3.js/Leaflet.js UFO map that reduces browser strain by moving dataset processing from the browser to a Node/Express server hosted by Heroku. (Note: as this is hosted via Heroku's free tier, it may take a few seconds for the dyno to start up due to inactivity)</p>
     </div>
-    
+
     <div class="col-sm-4 projectBox text-center">
     <a href="http://enigmatic-stream-47420.herokuapp.com/" class="projectLink"><h3>Latin game B: full version</h3></a>
       <a href="http://enigmatic-stream-47420.herokuapp.com/"><img class="img-responsive center-block img-thumbnail imgfit projectImg" src="siteimgs/latintilegameserver.png"></a>
       <p>An enhanced version of Latin synonym matching game B that enables users to sign up for, login to, and level up user accounts. This uses a Node/Express server hosted by Heroku and a MongoDB add-on hosted by mLab. Please note that the Heroku dyno may take a few seconds to start up due to inactivity. Please also note that the user login database exists as a proof of concept, and personal or identifiable data should not be entered into it. Additionally, do not enter password/username combinations that have been used elsewhere.</p>
     </div>
-    
+
     <div class="col-sm-4 projectBox text-center">
       <h3>More to come...</h3>
       <div class="img-responsive center-block img-thumbnail fakeimg imgfit"><i class="fas fa-ellipsis-h"></i></div>
       <p>This page will be updated with further projects in time.</p>
     </div>
 </div>
-    
-    
+
+
 <!-- FULL STACK CODE SAMPLES -->
-    
+
 <div class="row"  id="fsCodeSamples">
     <div class="col">
-        <h2>Full-stack code samples</h2>    
+        <h2>Full-stack code samples</h2>
         <p>The links below lead to a repositories for a selection of projects developed as part of the MSc in Computing and IT. These were configured to work on the School of Computer Science network and are not presently hosted externally and will need reworking to function externally. (note that npm dependencies are not included but listed through the relevant package files)</p>
     </div>
     </div>
-<div class="row">    
+<div class="row">
     <div class="col-sm-4 projectBox text-center">
       <a href="https://github.com/DTB50/Dissertation" class="projectLink"><h3>Latin synonym game with user accounts</h3></a>
         <a href="https://github.com/DTB50/Dissertation"><div class="img-responsive center-block img-thumbnail fakeimg imgfit projectImg"><i class="fas fa-ellipsis-h"></i></div></a>
       <p>A Latin synonym-matching game with user accounts enabled through a node/express API and a CouchDB noSQL database configured to run from a university network server.</p>
     </div>
-    
+
     <div class="col-sm-4 projectBox text-center">
       <a href="https://github.com/DTB50/Other-coursework-code" class="projectLink"><h3>Networked multiplayer checkers game</h3></a>
     <a href="https://github.com/DTB50/Other-coursework-code"><div class="img-responsive center-block img-thumbnail fakeimg imgfit projectImg"><i class="fas fa-ellipsis-h"></i></div></a>
       <p>A two-player checkers game designed to be played over the university network via a node/express API.</p>
     </div>
-    
+
     <div class="col-sm-4 projectBox text-center">
       <h3>More to come...</h3>
         <br>
@@ -444,8 +465,8 @@
       <p>This page will be updated with further projects in time.</p>
     </div>
   </div>
-    
-    
+
+
 <br>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
