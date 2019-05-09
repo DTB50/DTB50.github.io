@@ -33,7 +33,6 @@
             background-color: #efefef;
             border-radius: 15px;
             border: 10px solid white;
-            padding: 5px;
         }
 
         .projectImg:hover{
@@ -78,15 +77,17 @@
             margin-right: 2vh;
             height: auto;
         }
+        
         .projectBox{
             flex: 0 0 auto;
-            width: 80vw;
+            width: 70vw;
             min-height: 30vh;
             height: auto;
             word-wrap: normal;
             flex-wrap: wrap;
             margin-left: 3vw;
         }
+        
         .projectBox p {
             width: 98%;
         }
