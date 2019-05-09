@@ -6,9 +6,9 @@
             border: none;
           }
 
-            .imgfit{
-                max-height: 200px;
-            }
+        .imgfit{
+            max-height: 200px;
+        }
 
         .navbar .navbar-nav li a:hover{color: #aad9f7 !important;}
 
@@ -71,6 +71,7 @@
         }
         
         .scrolling-wrapper {
+            display: flex;
             flex-wrap: nowrap;
             overflow-x: auto;
             margin-left: 2vh;
