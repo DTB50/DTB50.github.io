@@ -32,7 +32,7 @@
         .projectBox {
             background-color: #efefef;
             border-radius: 15px;
-            border: 10px solid white;
+            border: 5px solid white;
         }
 
         .projectImg:hover{
@@ -80,7 +80,7 @@
         
         .projectBox{
             flex: 0 0 auto;
-            width: 70vw;
+            width: 75vw;
             min-height: 30vh;
             height: auto;
             word-wrap: normal;
