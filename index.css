@@ -10,6 +10,10 @@
             max-height: 200px;
         }
 
+        .img-round{
+            border-radius: 50%;
+        }
+
         .navbar .navbar-nav li a:hover{color: #aad9f7 !important;}
 
          .card .card-header a{color: black !important;}
@@ -91,5 +95,10 @@
         
         .projectBox p {
             width: 98%;
+        }
+        
+        .img-round{
+            margin-left: auto;
+            margin-right: auto;
         }
     }
