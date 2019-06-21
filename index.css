@@ -107,6 +107,8 @@
         .text-xs-center {
             text-align: center;
           } 
-        }
         
+        .text-xs-justify {
+            text-align: justify;
+          } 
     }
