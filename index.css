@@ -104,5 +104,9 @@
             margin-right: auto;
         }
         
+        .text-xs-center {
+            text-align: center;
+          } 
+        }
         
     }
